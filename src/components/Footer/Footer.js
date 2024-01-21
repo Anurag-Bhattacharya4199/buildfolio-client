@@ -1,8 +1,12 @@
+import LinkedInIcon from "../../assets/icons/linkedin.svg";
+import GitHubIcon from "../../assets/icons/github.svg";
+
 function Footer() {
   return (
     <>
-      <p>LinkedIn Icon with Link to my LinkedIn</p>
-      <p>GitHub Icon with Link to my GitHub</p>
+      <p>© 2023 Anurag Bhattacharya</p>
+      <img src={LinkedInIcon} />
+      <img src={GitHubIcon} />
     </>
   );
 }
