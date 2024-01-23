@@ -1,0 +1,10 @@
+.header {
+  margin-left: 16px;
+  margin-right: 16px;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid grey;
+  }
+}
