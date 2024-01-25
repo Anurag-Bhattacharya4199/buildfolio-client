@@ -20,5 +20,22 @@
       display: flex;
       justify-content: space-between;
     }
+
+    &-invalidInput {
+      border: 1px solid red;
+      outline-width: 0;
+    }
+
+    &-errorMsg {
+      display: none;
+    }
+
+    &-errorMsgInvalidInput {
+      color: red;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding-top: 5px;
+    }
   }
 }
