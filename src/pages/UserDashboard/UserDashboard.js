@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import "./UserDashboard.scss";
 import LinkedInIcon from "../../assets/icons/linkedin.svg";
 import GitHubIcon from "../../assets/icons/github.svg";
 
 function UserDashboard() {
   let { id } = useParams();
+  const navigate = useNavigate();
 
   const [hasLoaded, setHasLoaded] = useState(false);
   const [user, setUser] = useState("");
@@ -22,6 +23,9 @@ function UserDashboard() {
     fetchUserDetails();
   }, []);
 
+  const addEducation = () => {
+    navigate(`/${id}/addEducation`);
+  };
   if (!hasLoaded) {
     return null;
   } else {
@@ -57,11 +61,14 @@ function UserDashboard() {
           </a>
         </div>
         <div className="userDashboard__buttons">
-          <button>Add Education</button>
+          <button onClick={addEducation}>Add Education</button>
           <button>Add Professional History</button>
           <button>Add Projects</button>
           <button>Add Skills</button>
           <button>Add References</button>
+        </div>
+        <div>
+          <button>Show Education</button>
         </div>
         <div>
           <button>BUILD MY PORTFOLIO</button>

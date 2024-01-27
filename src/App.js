@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import UserForm from "./pages/UserForm/UserForm";
 import UserDashboard from "./pages/UserDashboard/UserDashboard";
+import UserEducation from "./pages/UserEducation/UserEducation";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/buildUser" element={<UserForm />} />
-          <Route path="/user/:id" element={<UserDashboard />} />
+          <Route path="/:id/user" element={<UserDashboard />} />
+          <Route path="/:id/addEducation" element={<UserEducation />} />
         </Routes>
         <Footer />
       </BrowserRouter>

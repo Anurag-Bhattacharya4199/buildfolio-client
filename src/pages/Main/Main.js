@@ -27,7 +27,7 @@ function Main() {
         </p>
       </div>
       <div>
-        <button onClick={handleSubmit}>BUILD YOUR PORTFOLIO!</button>
+        <button onClick={handleSubmit}>Let's Build your User!</button>
       </div>
     </section>
   );
