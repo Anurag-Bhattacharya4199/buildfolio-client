@@ -1,10 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ErrorIcon from "../../assets/icons/error-24px.svg";
-import "./UserEducation.scss";
+import "./UserEducationForm.scss";
 import axios from "axios";
 
-function UserEducation() {
+function UserEducationForm() {
   let { id } = useParams();
   const [schoolName, setSchoolName] = useState("");
   const [certName, setCertName] = useState("");
@@ -175,4 +175,4 @@ function UserEducation() {
   );
 }
 
-export default UserEducation;
+export default UserEducationForm;
