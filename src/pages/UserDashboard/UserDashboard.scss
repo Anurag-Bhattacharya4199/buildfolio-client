@@ -26,5 +26,23 @@
   color: violet;
 }
 
+.userDashboard {
+  padding: 16px;
+
+  &__mainTitle {
+    text-align: center;
+    padding-bottom: 4px;
+  }
+
+  &__contacts, &__summary, &__socialAccounts {
+    margin-bottom: 10px;
+  }
+
+  &__contacts, &__summary, &__socialAccounts, &__buttons {
+    padding: 4px;
+    border: 1px solid black;
+    text-align: center;
+  }
+}
 
 

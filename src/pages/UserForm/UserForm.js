@@ -3,6 +3,7 @@ import "./UserForm.scss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import ErrorIcon from "../../assets/icons/error-24px.svg";
+import validator from "validator";
 
 function UserForm() {
   const [name, setName] = useState("");
@@ -13,6 +14,7 @@ function UserForm() {
   const [github, setGitHub] = useState("");
   const [primaryColor, setPrimaryColor] = useState("");
   const [secondaryColor, setSecondaryColor] = useState("");
+  const [maxCharacter, setMaxCharacter] = useState(10);
 
   const [error, setError] = useState({
     nameError: false,
@@ -26,6 +28,26 @@ function UserForm() {
   });
 
   const navigate = useNavigate();
+
+  const handlePhoneNumberFormat = () => {
+    const phoneNumArray = phoneNum.split("");
+
+    //IF ONLY NUMBERS
+    if (!phoneNumArray.includes("(" || ")" || "+" || " " || "0")) {
+      setMaxCharacter(10);
+      if (phoneNumArray.length === 10) {
+        const formateNumber = `+1 (${phoneNumArray[0]}${phoneNumArray[1]}${phoneNumArray[2]}) ${phoneNumArray[3]}${phoneNumArray[4]}${phoneNumArray[5]}-${phoneNumArray[6]}${phoneNumArray[7]}${phoneNumArray[8]}${phoneNumArray[9]}`;
+        setPhoneNum(formateNumber);
+      }
+      return;
+    }
+
+    //IF NON-NUMBER
+    if (phoneNumArray.includes("(" || ")" || "+" || " " || "-")) {
+      setMaxCharacter(17);
+      return;
+    }
+  };
 
   function handleCancel() {
     alert("User is not created");
@@ -148,6 +170,19 @@ function UserForm() {
       formComplete = false;
     }
 
+    const phoneRegex = /\+1\s\(\d\d\d\)\s\d\d\d-\d\d\d\d/;
+    //VALIDATE PHONE-NUMBER
+    if (!phoneNum.match(phoneRegex)) {
+      errorState.phoneNumError = true;
+      formComplete = false;
+    }
+
+    //VALIDATE EMAIL
+    if (!validator.isEmail(email)) {
+      errorState.emailError = true;
+      formComplete = false;
+    }
+
     setError(errorState);
 
     return formComplete;
@@ -223,7 +258,7 @@ function UserForm() {
             }`}
           >
             <img src={ErrorIcon} alt="Error Icon" />
-            This field is required
+            This field is required / Email must be in correct format
           </span>
         </div>
         <div className="userForm__form-phoneNum">
@@ -233,10 +268,14 @@ function UserForm() {
               error.phoneNumError ? "userForm__form-invalidInput" : ""
             }`}
             placeholder="Phone Number"
+            maxLength={maxCharacter}
             name="phoneNum"
             form="phoneNum"
             value={phoneNum}
             onChange={handleChangePhoneNum}
+            onKeyUp={() => {
+              handlePhoneNumberFormat();
+            }}
           />
           <span
             className={`userForm__form-errorMsg ${
