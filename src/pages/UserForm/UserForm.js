@@ -211,7 +211,7 @@ function UserForm() {
         secondaryColor
       );
       alert("User added");
-      navigate(`/user/${id}`);
+      navigate(`/${id}/user`);
     }
   };
 
