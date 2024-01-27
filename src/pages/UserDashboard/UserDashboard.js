@@ -4,6 +4,8 @@ import { useParams, useNavigate } from "react-router-dom";
 import "./UserDashboard.scss";
 import LinkedInIcon from "../../assets/icons/linkedin.svg";
 import GitHubIcon from "../../assets/icons/github.svg";
+import UserEducation from "../../components/UserEducation/UserEducation";
+import UserWorkExp from "../../components/UserWorkExp/UserWorkExp";
 
 function UserDashboard() {
   let { id } = useParams();
@@ -12,6 +14,14 @@ function UserDashboard() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [user, setUser] = useState("");
 
+  const [hasEducationLoaded, setHasEducationLoeaded] = useState(false);
+  const [education, setEducation] = useState([]);
+  const [showEducation, setShowEducation] = useState(false);
+
+  const [hasWorkExpLoaded, setHasWorkExpLoaded] = useState(false);
+  const [workExp, setWorkExp] = useState([]);
+  const [showWorkExp, setShowWorkExp] = useState(false);
+
   const fetchUserDetails = async () => {
     await axios.get(`http://localhost:8080/users/${id}`).then((response) => {
       setUser(response.data);
@@ -19,12 +29,52 @@ function UserDashboard() {
     });
   };
 
+  const fetchEducationDetails = async () => {
+    await axios
+      .get(`http://localhost:8080/users/${id}/educations`)
+      .then((response) => {
+        setEducation(response.data);
+        setHasEducationLoeaded(true);
+      });
+  };
+
+  const fetchWorkExpDetails = async () => {
+    await axios
+      .get(`http://localhost:8080/users/${id}/workExperiences`)
+      .then((response) => {
+        setWorkExp(response.data);
+        setHasWorkExpLoaded(true);
+      });
+  };
+
   useEffect(() => {
     fetchUserDetails();
+    fetchEducationDetails();
+    fetchWorkExpDetails();
   }, []);
+
+  const loadEducation = () => {
+    setShowEducation(true);
+  };
+
+  const hideEducation = () => {
+    setShowEducation(false);
+  };
+
+  const loadWorkExp = () => {
+    setShowWorkExp(true);
+  };
+
+  const hideWorkExp = () => {
+    setShowWorkExp(false);
+  };
 
   const addEducation = () => {
     navigate(`/${id}/addEducation`);
+  };
+
+  const addWorkExperience = () => {
+    navigate(`/${id}/addWorkExperience`);
   };
   if (!hasLoaded) {
     return null;
@@ -62,14 +112,46 @@ function UserDashboard() {
         </div>
         <div className="userDashboard__buttons">
           <button onClick={addEducation}>Add Education</button>
-          <button>Add Professional History</button>
+          <button onClick={addWorkExperience}>Add Professional History</button>
           <button>Add Projects</button>
           <button>Add Skills</button>
           <button>Add References</button>
         </div>
-        <div>
-          <button>Show Education</button>
-        </div>
+        {hasEducationLoaded && education.length > 0 && (
+          <div className="userDashboard__buttons">
+            <button onClick={loadEducation}>Show Education</button>
+            <button onClick={hideEducation}>Hide Education</button>
+            {showEducation &&
+              education.map((ed) => {
+                return (
+                  <UserEducation
+                    key={ed.edId}
+                    school_name={ed.school_name}
+                    cert_name={ed.certification_name}
+                    grad_date={ed.graduation_date}
+                  />
+                );
+              })}
+          </div>
+        )}
+        {hasWorkExpLoaded && workExp.length > 0 && (
+          <div className="userDashboard__buttons">
+            <button onClick={loadWorkExp}>Show Work Experience</button>
+            <button onClick={hideWorkExp}>Hide Work Experience</button>
+            {showWorkExp &&
+              workExp.map((work) => {
+                return (
+                  <UserWorkExp
+                    key={work.workExpId}
+                    workTitle={work.work_title}
+                    company={work.company_name}
+                    desc={work.work_desc}
+                    startDate={work.start_date}
+                  />
+                );
+              })}
+          </div>
+        )}
         <div>
           <button>BUILD MY PORTFOLIO</button>
         </div>

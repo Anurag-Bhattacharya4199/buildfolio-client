@@ -1,0 +1,41 @@
+.userWorkExp {
+  padding: 16px;
+  text-align: center;
+
+  &__title {
+    text-decoration: underline;
+  }
+
+  &__form {
+    border: 1px solid black;
+    padding: 16px;
+
+    &-work_title, &-company, &-desc, &-start_date {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 10px;
+    }
+
+    &-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-invalidInput {
+      border: 1px solid red;
+      outline-width: 0;
+    }
+
+    &-errorMsg {
+      display: none;
+    }
+
+    &-errorMsgInvalidInput {
+      color: red;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding-top: 5px;
+    }
+  }
+}
