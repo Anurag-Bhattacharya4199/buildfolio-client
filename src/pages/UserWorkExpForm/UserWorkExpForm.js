@@ -122,7 +122,7 @@ function UserWorkExpForm() {
           <label>Work Title:</label>
           <input
             className={`${
-              error.workTitleError ? "userForm__form-invalidInput" : ""
+              error.workTitleError ? "userWorkExp__form-invalidInput" : ""
             }`}
             placeholder="Work Title"
             name="workTitle"
@@ -131,8 +131,10 @@ function UserWorkExpForm() {
             onChange={handleChangeWorkTitle}
           />
           <span
-            className={`userForm__form-errorMsg ${
-              error.workTitleError ? "userForm__form-errorMsgInvalidInput" : ""
+            className={`userWorkExp__form-errorMsg ${
+              error.workTitleError
+                ? "userWorkExp__form-errorMsgInvalidInput"
+                : ""
             }`}
           >
             <img src={ErrorIcon} alt="Error Icon" />
@@ -143,7 +145,7 @@ function UserWorkExpForm() {
           <label>Company:</label>
           <input
             className={`${
-              error.companyError ? "userForm__form-invalidInput" : ""
+              error.companyError ? "userWorkExp__form-invalidInput" : ""
             }`}
             placeholder="Company"
             name="company"
@@ -152,8 +154,8 @@ function UserWorkExpForm() {
             onChange={handleChangeCompany}
           />
           <span
-            className={`userForm__form-errorMsg ${
-              error.companyError ? "userForm__form-errorMsgInvalidInput" : ""
+            className={`userWorkExp__form-errorMsg ${
+              error.companyError ? "userWorkExp__form-errorMsgInvalidInput" : ""
             }`}
           >
             <img src={ErrorIcon} alt="Error Icon" />
@@ -164,7 +166,7 @@ function UserWorkExpForm() {
           <label>Description:</label>
           <textarea
             className={`${
-              error.descError ? "userForm__form-invalidInput" : ""
+              error.descError ? "userWorkExp__form-invalidInput" : ""
             }`}
             placeholder="Description of Work"
             name="desc"
@@ -173,8 +175,8 @@ function UserWorkExpForm() {
             onChange={handleChangeDesc}
           />
           <span
-            className={`userForm__form-errorMsg ${
-              error.descError ? "userForm__form-errorMsgInvalidInput" : ""
+            className={`userWorkExp__form-errorMsg ${
+              error.descError ? "userWorkExp__form-errorMsgInvalidInput" : ""
             }`}
           >
             <img src={ErrorIcon} alt="Error Icon" />
@@ -186,7 +188,7 @@ function UserWorkExpForm() {
           <input
             type="date"
             className={`${
-              error.startDateError ? "userForm__form-invalidInput" : ""
+              error.startDateError ? "userWorkExp__form-invalidInput" : ""
             }`}
             placeholder="Start Date"
             name="startDate"
@@ -195,8 +197,10 @@ function UserWorkExpForm() {
             onChange={handleChangeStartDate}
           />
           <span
-            className={`userForm__form-errorMsg ${
-              error.startDateError ? "userForm__form-errorMsgInvalidInput" : ""
+            className={`userWorkExp__form-errorMsg ${
+              error.startDateError
+                ? "userWorkExp__form-errorMsgInvalidInput"
+                : ""
             }`}
           >
             <img src={ErrorIcon} alt="Error Icon" />

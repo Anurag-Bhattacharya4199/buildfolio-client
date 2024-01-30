@@ -6,6 +6,7 @@ import LinkedInIcon from "../../assets/icons/linkedin.svg";
 import GitHubIcon from "../../assets/icons/github.svg";
 import UserEducation from "../../components/UserEducation/UserEducation";
 import UserWorkExp from "../../components/UserWorkExp/UserWorkExp";
+import UserProject from "../../components/UserProject/UserProject";
 
 function UserDashboard() {
   let { id } = useParams();
@@ -21,6 +22,10 @@ function UserDashboard() {
   const [hasWorkExpLoaded, setHasWorkExpLoaded] = useState(false);
   const [workExp, setWorkExp] = useState([]);
   const [showWorkExp, setShowWorkExp] = useState(false);
+
+  const [hasProjectLoaded, setHasProjectLoaded] = useState(false);
+  const [project, setProject] = useState([]);
+  const [showProject, setShowProject] = useState(false);
 
   const fetchUserDetails = async () => {
     await axios.get(`http://localhost:8080/users/${id}`).then((response) => {
@@ -47,10 +52,20 @@ function UserDashboard() {
       });
   };
 
+  const fetchProjectDetails = async () => {
+    await axios
+      .get(`http://localhost:8080/users/${id}/projects`)
+      .then((response) => {
+        setProject(response.data);
+        setHasProjectLoaded(true);
+      });
+  };
+
   useEffect(() => {
     fetchUserDetails();
     fetchEducationDetails();
     fetchWorkExpDetails();
+    fetchProjectDetails();
   }, []);
 
   const loadEducation = () => {
@@ -69,12 +84,24 @@ function UserDashboard() {
     setShowWorkExp(false);
   };
 
+  const loadProject = () => {
+    setShowProject(true);
+  };
+
+  const hideProject = () => {
+    setShowProject(false);
+  };
+
   const addEducation = () => {
     navigate(`/${id}/addEducation`);
   };
 
   const addWorkExperience = () => {
     navigate(`/${id}/addWorkExperience`);
+  };
+
+  const addProject = () => {
+    navigate(`/${id}/addProject`);
   };
   if (!hasLoaded) {
     return null;
@@ -113,7 +140,7 @@ function UserDashboard() {
         <div className="userDashboard__buttons">
           <button onClick={addEducation}>Add Education</button>
           <button onClick={addWorkExperience}>Add Professional History</button>
-          <button>Add Projects</button>
+          <button onClick={addProject}>Add Project</button>
           <button>Add Skills</button>
           <button>Add References</button>
         </div>
@@ -147,6 +174,23 @@ function UserDashboard() {
                     company={work.company_name}
                     desc={work.work_desc}
                     startDate={work.start_date}
+                  />
+                );
+              })}
+          </div>
+        )}
+        {hasProjectLoaded && project.length > 0 && (
+          <div className="userDashboard__buttons">
+            <button onClick={loadProject}>Show Project</button>
+            <button onClick={hideProject}>Hide Project</button>
+            {showProject &&
+              project.map((item) => {
+                return (
+                  <UserProject
+                    key={item.projectId}
+                    projectName={item.project_name}
+                    desc={item.project_desc}
+                    link={item.project_link}
                   />
                 );
               })}

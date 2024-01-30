@@ -7,6 +7,7 @@ import UserForm from "./pages/UserForm/UserForm";
 import UserDashboard from "./pages/UserDashboard/UserDashboard";
 import UserEducationForm from "./pages/UserEducationForm/UserEducationForm";
 import UserWorkExpForm from "./pages/UserWorkExpForm/UserWorkExpForm";
+import UserProject from "./pages/UserProjectForm/UserProject";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/:id/user" element={<UserDashboard />} />
           <Route path="/:id/addEducation" element={<UserEducationForm />} />
           <Route path="/:id/addWorkExperience" element={<UserWorkExpForm />} />
+          <Route path="/:id/addProject" element={<UserProject />} />
         </Routes>
         <Footer />
       </BrowserRouter>
