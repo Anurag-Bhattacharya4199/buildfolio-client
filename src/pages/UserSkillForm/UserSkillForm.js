@@ -81,7 +81,7 @@ function UserSkillForm() {
     event.preventDefault();
 
     if (isFormValid()) {
-      setSkillName("Skill Name");
+      setSkillName("");
       setProfLvl("");
       await postSkill(skillName, profLvl);
       alert("Skill added");

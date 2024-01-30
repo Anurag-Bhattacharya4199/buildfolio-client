@@ -9,6 +9,7 @@ import UserEducationForm from "./pages/UserEducationForm/UserEducationForm";
 import UserWorkExpForm from "./pages/UserWorkExpForm/UserWorkExpForm";
 import UserProjectForm from "./pages/UserProjectForm/UserProjectForm";
 import UserSkillForm from "./pages/UserSkillForm/UserSkillForm";
+import UserReferenceForm from "./pages/UserReferenceForm/UserReferenceForm";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/:id/addWorkExperience" element={<UserWorkExpForm />} />
           <Route path="/:id/addProject" element={<UserProjectForm />} />
           <Route path="/:id/addSkill" element={<UserSkillForm />} />
+          <Route path="/:id/addReference" element={<UserReferenceForm />} />
         </Routes>
         <Footer />
       </BrowserRouter>
