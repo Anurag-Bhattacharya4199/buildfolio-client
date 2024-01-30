@@ -104,9 +104,9 @@ function UserWorkExpForm() {
     event.preventDefault();
 
     if (isFormValid()) {
-      setWorkTitle("Work Title");
-      setCompany("Company");
-      setDesc("Description of Work");
+      setWorkTitle("");
+      setCompany("");
+      setDesc("");
       setStartDate("");
       await postWorkExp(workTitle, company, desc, startDate);
       alert("Work Experience added");

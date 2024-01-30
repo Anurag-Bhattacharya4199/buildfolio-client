@@ -8,6 +8,7 @@ import UserEducation from "../../components/UserEducation/UserEducation";
 import UserWorkExp from "../../components/UserWorkExp/UserWorkExp";
 import UserProject from "../../components/UserProject/UserProject";
 import UserSkill from "../../components/UserSkill/UserSkill";
+import UserRef from "../../components/UserRef/UserRef";
 
 function UserDashboard() {
   let { id } = useParams();
@@ -31,6 +32,10 @@ function UserDashboard() {
   const [hasSkillLoaded, setHasSkillLoaded] = useState(false);
   const [skill, setSkill] = useState([]);
   const [showSkill, setShowSkill] = useState(false);
+
+  const [hasRefLoaded, setHasRefLoaded] = useState(false);
+  const [ref, setRef] = useState([]);
+  const [showRef, setShowRef] = useState(false);
 
   const fetchUserDetails = async () => {
     await axios.get(`http://localhost:8080/users/${id}`).then((response) => {
@@ -75,12 +80,22 @@ function UserDashboard() {
       });
   };
 
+  const fetchRefDetails = async () => {
+    await axios
+      .get(`http://localhost:8080/users/${id}/references`)
+      .then((response) => {
+        setRef(response.data);
+        setHasRefLoaded(true);
+      });
+  };
+
   useEffect(() => {
     fetchUserDetails();
     fetchEducationDetails();
     fetchWorkExpDetails();
     fetchProjectDetails();
     fetchSkillDetails();
+    fetchRefDetails();
   }, []);
 
   const loadEducation = () => {
@@ -115,6 +130,14 @@ function UserDashboard() {
     setShowSkill(false);
   };
 
+  const loadRef = () => {
+    setShowRef(true);
+  };
+
+  const hideRef = () => {
+    setShowRef(false);
+  };
+
   const addEducation = () => {
     navigate(`/${id}/addEducation`);
   };
@@ -130,6 +153,11 @@ function UserDashboard() {
   const addSkill = () => {
     navigate(`/${id}/addSkill`);
   };
+
+  const addReference = () => {
+    navigate(`/${id}/addReference`);
+  };
+
   if (!hasLoaded) {
     return null;
   } else {
@@ -169,7 +197,7 @@ function UserDashboard() {
           <button onClick={addWorkExperience}>Add Professional History</button>
           <button onClick={addProject}>Add Project</button>
           <button onClick={addSkill}>Add Skills</button>
-          <button>Add References</button>
+          <button onClick={addReference}>Add References</button>
         </div>
         {hasEducationLoaded && education.length > 0 && (
           <div className="userDashboard__buttons">
@@ -234,6 +262,22 @@ function UserDashboard() {
                     key={item.skillId}
                     skillName={item.skill_name}
                     profLvl={item.skill_proficiencyLevel}
+                  />
+                );
+              })}
+          </div>
+        )}
+        {hasRefLoaded && ref.length > 0 && (
+          <div className="userDashboard__buttons">
+            <button onClick={loadRef}>Show Reference</button>
+            <button onClick={hideRef}>Hide Reference</button>
+            {showRef &&
+              ref.map((item) => {
+                return (
+                  <UserRef
+                    key={item.referenceId}
+                    name={item.reference_name}
+                    comment={item.reference_comment}
                   />
                 );
               })}

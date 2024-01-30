@@ -90,9 +90,9 @@ function UserProjectForm() {
     event.preventDefault();
 
     if (isFormValid()) {
-      setProjectName("Project Name");
-      setDesc("Description of Project");
-      setLink("Link of Project");
+      setProjectName("");
+      setDesc("");
+      setLink("");
       await postProject(projectName, desc, link);
       alert("Project added");
       navigate(`/${id}/user`);
