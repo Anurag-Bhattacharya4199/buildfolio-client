@@ -7,6 +7,7 @@ import GitHubIcon from "../../assets/icons/github.svg";
 import UserEducation from "../../components/UserEducation/UserEducation";
 import UserWorkExp from "../../components/UserWorkExp/UserWorkExp";
 import UserProject from "../../components/UserProject/UserProject";
+import UserSkill from "../../components/UserSkill/UserSkill";
 
 function UserDashboard() {
   let { id } = useParams();
@@ -26,6 +27,10 @@ function UserDashboard() {
   const [hasProjectLoaded, setHasProjectLoaded] = useState(false);
   const [project, setProject] = useState([]);
   const [showProject, setShowProject] = useState(false);
+
+  const [hasSkillLoaded, setHasSkillLoaded] = useState(false);
+  const [skill, setSkill] = useState([]);
+  const [showSkill, setShowSkill] = useState(false);
 
   const fetchUserDetails = async () => {
     await axios.get(`http://localhost:8080/users/${id}`).then((response) => {
@@ -61,11 +66,21 @@ function UserDashboard() {
       });
   };
 
+  const fetchSkillDetails = async () => {
+    await axios
+      .get(`http://localhost:8080/users/${id}/skills`)
+      .then((response) => {
+        setSkill(response.data);
+        setHasSkillLoaded(true);
+      });
+  };
+
   useEffect(() => {
     fetchUserDetails();
     fetchEducationDetails();
     fetchWorkExpDetails();
     fetchProjectDetails();
+    fetchSkillDetails();
   }, []);
 
   const loadEducation = () => {
@@ -92,6 +107,14 @@ function UserDashboard() {
     setShowProject(false);
   };
 
+  const loadSkill = () => {
+    setShowSkill(true);
+  };
+
+  const hideSkill = () => {
+    setShowSkill(false);
+  };
+
   const addEducation = () => {
     navigate(`/${id}/addEducation`);
   };
@@ -102,6 +125,10 @@ function UserDashboard() {
 
   const addProject = () => {
     navigate(`/${id}/addProject`);
+  };
+
+  const addSkill = () => {
+    navigate(`/${id}/addSkill`);
   };
   if (!hasLoaded) {
     return null;
@@ -141,7 +168,7 @@ function UserDashboard() {
           <button onClick={addEducation}>Add Education</button>
           <button onClick={addWorkExperience}>Add Professional History</button>
           <button onClick={addProject}>Add Project</button>
-          <button>Add Skills</button>
+          <button onClick={addSkill}>Add Skills</button>
           <button>Add References</button>
         </div>
         {hasEducationLoaded && education.length > 0 && (
@@ -191,6 +218,22 @@ function UserDashboard() {
                     projectName={item.project_name}
                     desc={item.project_desc}
                     link={item.project_link}
+                  />
+                );
+              })}
+          </div>
+        )}
+        {hasSkillLoaded && skill.length > 0 && (
+          <div className="userDashboard__buttons">
+            <button onClick={loadSkill}>Show Skill</button>
+            <button onClick={hideSkill}>Hide Skill</button>
+            {showSkill &&
+              skill.map((item) => {
+                return (
+                  <UserSkill
+                    key={item.skillId}
+                    skillName={item.skill_name}
+                    profLvl={item.skill_proficiencyLevel}
                   />
                 );
               })}
