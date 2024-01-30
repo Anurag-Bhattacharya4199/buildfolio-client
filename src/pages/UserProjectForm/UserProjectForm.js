@@ -1,10 +1,10 @@
 import { useNavigate, useParams } from "react-router-dom";
-import "./UserProject.scss";
+import "./UserProjectForm.scss";
 import { useState } from "react";
 import ErrorIcon from "../../assets/icons/error-24px.svg";
 import axios from "axios";
 
-function UserProject() {
+function UserProjectForm() {
   let { id } = useParams();
   const [projectName, setProjectName] = useState("");
   const [desc, setDesc] = useState("");
@@ -177,4 +177,4 @@ function UserProject() {
   );
 }
 
-export default UserProject;
+export default UserProjectForm;
