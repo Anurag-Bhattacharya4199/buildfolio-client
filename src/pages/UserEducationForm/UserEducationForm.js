@@ -116,8 +116,10 @@ function UserEducationForm() {
             onChange={handleChangeSchoolName}
           />
           <span
-            className={`userForm__form-errorMsg ${
-              error.schoolNameError ? "userForm__form-errorMsgInvalidInput" : ""
+            className={`userEducation__form-errorMsg ${
+              error.schoolNameError
+                ? "userEducation__form-errorMsgInvalidInput"
+                : ""
             }`}
           >
             <img src={ErrorIcon} alt="Error Icon" />
@@ -137,8 +139,10 @@ function UserEducationForm() {
             onChange={handleChangeCertName}
           />
           <span
-            className={`userForm__form-errorMsg ${
-              error.certNameError ? "userForm__form-errorMsgInvalidInput" : ""
+            className={`userEducation__form-errorMsg ${
+              error.certNameError
+                ? "userEducation__form-errorMsgInvalidInput"
+                : ""
             }`}
           >
             <img src={ErrorIcon} alt="Error Icon" />
@@ -150,7 +154,7 @@ function UserEducationForm() {
           <input
             type="date"
             className={`${
-              error.gradDateError ? "userForm__form-invalidInput" : ""
+              error.gradDateError ? "userEducation__form-invalidInput" : ""
             }`}
             name="gradDate"
             form="gradDate"
@@ -158,8 +162,10 @@ function UserEducationForm() {
             onChange={handleChangeGradDate}
           />
           <span
-            className={`userForm__form-errorMsg ${
-              error.gradDateError ? "userForm__form-errorMsgInvalidInput" : ""
+            className={`userEducation__form-errorMsg ${
+              error.gradDateError
+                ? "userEducation__form-errorMsgInvalidInput"
+                : ""
             }`}
           >
             <img src={ErrorIcon} alt="Error Icon" />
