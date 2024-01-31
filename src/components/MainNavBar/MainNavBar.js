@@ -4,7 +4,7 @@ import "./MainNavBar.scss";
 function MainNavBar() {
   return (
     <nav className="navBar">
-      <div className="navBar__">
+      <div>
         <NavLink to="/" className="navBar__link">
           Home
         </NavLink>

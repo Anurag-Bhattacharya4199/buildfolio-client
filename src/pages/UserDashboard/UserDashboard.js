@@ -158,6 +158,10 @@ function UserDashboard() {
     navigate(`/${id}/addReference`);
   };
 
+  const goToPortfolio = () => {
+    navigate(`/${id}/user/portfolio`);
+  };
+
   if (!hasLoaded) {
     return null;
   } else {
@@ -283,8 +287,8 @@ function UserDashboard() {
               })}
           </div>
         )}
-        <div>
-          <button>BUILD MY PORTFOLIO</button>
+        <div className="userDashboard__buttons">
+          <button onClick={goToPortfolio}>BUILD MY PORTFOLIO</button>
         </div>
       </section>
     );

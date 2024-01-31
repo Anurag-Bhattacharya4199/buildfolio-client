@@ -10,6 +10,7 @@ import UserWorkExpForm from "./pages/UserWorkExpForm/UserWorkExpForm";
 import UserProjectForm from "./pages/UserProjectForm/UserProjectForm";
 import UserSkillForm from "./pages/UserSkillForm/UserSkillForm";
 import UserReferenceForm from "./pages/UserReferenceForm/UserReferenceForm";
+import UserPortfolio from "./pages/UserPortfolio/UserPortfolio";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/:id/addProject" element={<UserProjectForm />} />
           <Route path="/:id/addSkill" element={<UserSkillForm />} />
           <Route path="/:id/addReference" element={<UserReferenceForm />} />
+          <Route path="/:id/user/portfolio" element={<UserPortfolio />} />
         </Routes>
         <Footer />
       </BrowserRouter>
