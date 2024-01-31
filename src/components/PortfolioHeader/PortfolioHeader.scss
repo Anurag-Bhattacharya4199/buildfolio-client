@@ -1,0 +1,15 @@
+.headerNav {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+
+  &__links {
+    text-decoration: none;
+    color: black;
+    padding: 16px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
