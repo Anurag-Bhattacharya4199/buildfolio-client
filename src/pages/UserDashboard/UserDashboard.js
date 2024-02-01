@@ -38,10 +38,15 @@ function UserDashboard() {
   const [showRef, setShowRef] = useState(false);
 
   const fetchUserDetails = async () => {
-    await axios.get(`http://localhost:8080/users/${id}`).then((response) => {
-      setUser(response.data);
-      setHasLoaded(true);
-    });
+    await axios
+      .get(`http://localhost:8080/users/${id}`)
+      .then((response) => {
+        setUser(response.data);
+        setHasLoaded(true);
+      })
+      .catch(() => {
+        navigate("/error");
+      });
   };
 
   const fetchEducationDetails = async () => {
@@ -287,9 +292,20 @@ function UserDashboard() {
               })}
           </div>
         )}
-        <div className="userDashboard__buttons">
-          <button onClick={goToPortfolio}>BUILD MY PORTFOLIO</button>
-        </div>
+        {hasEducationLoaded &&
+          education.length > 0 &&
+          hasWorkExpLoaded &&
+          workExp.length > 0 &&
+          hasProjectLoaded &&
+          project.length > 0 &&
+          hasSkillLoaded &&
+          skill.length > 0 &&
+          hasRefLoaded &&
+          ref.length > 0 && (
+            <div className="userDashboard__buttons">
+              <button onClick={goToPortfolio}>BUILD MY PORTFOLIO</button>
+            </div>
+          )}
       </section>
     );
   }

@@ -1,6 +1,8 @@
 import Portfolio from "../../assets/icons/portfolio.svg";
 import "./Header.scss";
 import MainNavBar from "../MainNavBar/MainNavBar";
+import { useLocation, useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 function Header() {
   return (

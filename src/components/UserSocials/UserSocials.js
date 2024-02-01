@@ -8,7 +8,7 @@ function UserSocials(props) {
   return (
     <div>
       <h1>Social Accounts:</h1>
-      <div className="socialAccountLinks">
+      <div>
         <a href={linkedIn} target="_blank" rel="noreferrer">
           <img src={LinkedInIcon} />
         </a>
