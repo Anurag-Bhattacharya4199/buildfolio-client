@@ -30,12 +30,16 @@ function UserPortfolio() {
     return (
       <>
         <PortfolioHeader name={user.user_name} />
-        <section className="mainContent">
-          <img src={ProfilePic} alt="Generic Profile Picture"></img>
+        <section>
+          <img
+            src={ProfilePic}
+            alt="Generic Profile Picture"
+            className="mainContent__profileImg"
+          ></img>
           <p>{user.user_summary}</p>
         </section>
         <UserProjectList />
-        <section className="contacts">
+        <section>
           <UserContactInfo
             email={user.user_email}
             phoneNumber={user.user_phoneNum}

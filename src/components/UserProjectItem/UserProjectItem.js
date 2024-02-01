@@ -5,8 +5,8 @@ function UserProjectItem(props) {
   const { projectName, desc, link } = props;
 
   return (
-    <ul className="projectList">
-      <li className="projectList__item">
+    <ul>
+      <li>
         <div>
           <p>{projectName}</p>
           <p>{desc}</p>

@@ -1,5 +1,6 @@
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useLocation, useParams } from "react-router-dom";
 import "./PortfolioHeader.scss";
+import { useEffect, useState } from "react";
 
 function PortfolioHeader(props) {
   const { name } = props;
@@ -10,8 +11,15 @@ function PortfolioHeader(props) {
       <NavLink to={`/${id}/user/portfolio`} className="headerNav__links">
         {name}
       </NavLink>
-      <NavLink className="headerNav__links">About</NavLink>
-      <NavLink className="headerNav__links">Reviews</NavLink>
+      <NavLink to={`/${id}/user`} className="headerNav__links">
+        Dashboard
+      </NavLink>
+      <NavLink className="headerNav__links" to={`/${id}/user/portfolio/about`}>
+        About
+      </NavLink>
+      <NavLink className="headerNav__links" to={`/${id}/user/portfolio/review`}>
+        Reviews
+      </NavLink>
     </nav>
   );
 }

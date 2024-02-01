@@ -22,16 +22,20 @@ function UserProjectList() {
     fetchProjectDetails();
   }, []);
 
-  return project.map((item) => {
-    return (
-      <UserProjectItem
-        key={item.projectId}
-        projectName={item.project_name}
-        desc={item.project_desc}
-        link={item.project_link}
-      />
-    );
-  });
+  if (!hasProjectLoaded) {
+    return null;
+  } else {
+    return project.map((item) => {
+      return (
+        <UserProjectItem
+          key={item.projectId}
+          projectName={item.project_name}
+          desc={item.project_desc}
+          link={item.project_link}
+        />
+      );
+    });
+  }
 }
 
 export default UserProjectList;
