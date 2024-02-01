@@ -93,10 +93,10 @@ function UserSkillForm() {
     <section className="userSkill">
       <h1 className="userSkill__title">Top Skills:</h1>
       <form className="userSkill__form" onSubmit={handleSubmit}>
-        <div className="userSkill__form-skill_name">
+        <div className="userSkill__form-skillName">
           <label>Skill Name:</label>
           <input
-            className={`${
+            className={`userSkill__form-skillNameInp ${
               error.skillNameError ? "userSkill__form-invalidInput" : ""
             }`}
             placeholder="Skill Name"
@@ -117,7 +117,7 @@ function UserSkillForm() {
         <div className="userSkill__form-profLvl">
           <label>Proficiency Level: (Rate Skill between 1 and 5)</label>
           <input
-            className={`${
+            className={`userSkill__form-profLvlInp ${
               error.profLvlError ? "userSkill__form-invalidInput" : ""
             }`}
             type="number"
@@ -138,8 +138,10 @@ function UserSkillForm() {
           </span>
         </div>
         <div className="userSkill__form-buttons">
-          <button>Add Skill</button>
-          <button onClick={handleCancel}>Cancel</button>
+          <button className="userSkill__form-submit">Add Skill</button>
+          <button onClick={handleCancel} className="userSkill__form-cancel">
+            Cancel
+          </button>
         </div>
       </form>
     </section>

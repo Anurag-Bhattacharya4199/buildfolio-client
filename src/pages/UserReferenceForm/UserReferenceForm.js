@@ -90,7 +90,9 @@ function UserReferenceForm() {
         <div className="userRef__form-name">
           <label>Name:</label>
           <input
-            className={`${error.nameError ? "userRef__form-invalidInput" : ""}`}
+            className={`userRef__form-nameInp ${
+              error.nameError ? "userRef__form-invalidInput" : ""
+            }`}
             placeholder="Name"
             name="refName"
             form="refName"
@@ -109,7 +111,7 @@ function UserReferenceForm() {
         <div className="userRef__form-comment">
           <label>Comment:</label>
           <input
-            className={`${
+            className={`userRef__form-commentInp ${
               error.commentError ? "userRef__form-invalidInput" : ""
             }`}
             placeholder="Comment"
@@ -128,8 +130,10 @@ function UserReferenceForm() {
           </span>
         </div>
         <div className="userRef__form-buttons">
-          <button>Add Reference</button>
-          <button onClick={handleCancel}>Cancel</button>
+          <button className="userRef__form-submit">Add Reference</button>
+          <button onClick={handleCancel} className="userRef__form-cancel">
+            Cancel
+          </button>
         </div>
       </form>
     </section>

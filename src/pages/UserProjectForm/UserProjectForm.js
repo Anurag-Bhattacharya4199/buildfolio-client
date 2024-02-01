@@ -103,10 +103,10 @@ function UserProjectForm() {
     <section className="userProject">
       <h1 className="userProject__title">Notable Projects:</h1>
       <form className="userProject__form" onSubmit={handleSubmit}>
-        <div className="userProject__form-project_name">
+        <div className="userProject__form-projectName">
           <label>Project Name:</label>
           <input
-            className={`${
+            className={`userProject__form-projectNameInp ${
               error.projectNameError ? "userProject__form-invalidInput" : ""
             }`}
             placeholder="Project Name"
@@ -129,7 +129,7 @@ function UserProjectForm() {
         <div className="userProject__form-desc">
           <label>Description:</label>
           <textarea
-            className={`${
+            className={`userProject__form-descInp ${
               error.descError ? "userProject__form-invalidInput" : ""
             }`}
             placeholder="Description of Project"
@@ -150,7 +150,7 @@ function UserProjectForm() {
         <div className="userProject__form-link">
           <label>Link:</label>
           <input
-            className={`${
+            className={`userProject__form-linkInp ${
               error.linkError ? "userProject__form-invalidInput" : ""
             }`}
             placeholder="Link of Project"
@@ -169,8 +169,10 @@ function UserProjectForm() {
           </span>
         </div>
         <div className="userProject__form-buttons">
-          <button>Add Project</button>
-          <button onClick={handleCancel}>Cancel</button>
+          <button className="userProject__form-submit">Add Project</button>
+          <button onClick={handleCancel} className="userProject__form-cancel">
+            Cancel
+          </button>
         </div>
       </form>
     </section>

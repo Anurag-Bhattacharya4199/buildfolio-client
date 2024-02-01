@@ -1,40 +1,111 @@
+@import "../../styles/partials/global";
+
 .userSkill {
-  padding: 16px;
-  text-align: center;
+  padding-top: $mobile-padding-between-components;
+  padding-bottom: $mobile-padding-between-components;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid $Black;
 
   &__title {
+    font-family: "Roboto-Bold";
+    font-weight: 700;
     text-decoration: underline;
   }
 
-  &__form{
-    border: 1px solid black;
-    padding: 16px;
+  &__form {
+    margin-top: $mobile-padding-between-components;
+    padding: $mobile-padding-between-components;
+    border: 1px solid $Black;
 
-    &-skill_name, &-profLvl {
+    &-skillName, &-profLvl {
       display: flex;
       flex-direction: column;
-      padding-bottom: 10px;
+      padding-bottom: $mobile-padding-between-components;
+    }
+
+    &-skillNameInp, &-profLvlInp {
+      height: 36px;
+      padding-left: $mobile-padding-between-components;
+      padding-right: $mobile-padding-between-components;
+      border-radius: 20px;
+      border: 1px solid $Black;
+
+      &:focus {
+        outline: 0;
+        border:2px solid $Blue;
+      }
     }
 
     &-buttons {
+      overflow: hidden;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      background-color: $Grey;
+      padding: $mobile-padding-between-components;
+    }
+
+    &-submit, &-cancel {
+      height: 36px;
+      border-radius: 20px;
+      border: 1px solid lightgray;
+      width: 47%;
+
+      &:hover {
+        cursor: pointer;
+        background-color: $Yellow;
+      }
     }
 
     &-invalidInput {
-      border: 1px solid red;
+      border: 1px solid $Red;
+      outline-width: 0;
     }
 
     &-errorMsg {
       display: none;
+      font-size: 13px;
     }
 
     &-errorMsgInvalidInput {
-      color: red;
+      color: $Red;
       display: flex;
       align-items: center;
       gap: 6px;
       padding-top: 5px;
+    }
+  }
+}
+
+@include tablet {
+  .userSkill {
+    padding-top: $desktop-padding-between-components;
+    padding-bottom: $desktop-padding-between-components;
+
+    &__form {
+      margin-top: $desktop-padding-between-components;
+      padding: $desktop-padding-between-components;
+  
+      &-skillName, &-profLvl {
+        padding-bottom: $desktop-padding-between-components;
+      }
+  
+      &-skillNameInp, &-profLvlInp {
+        height: 38px;
+        width: auto;
+        padding-left: $desktop-padding-between-components;
+        padding-right: $desktop-padding-between-components;
+      }
+  
+      &-buttons {
+        padding: $desktop-padding-between-components;
+      }
     }
   }
 }

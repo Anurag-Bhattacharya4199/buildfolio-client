@@ -33,7 +33,7 @@ function App() {
           <Route path="/error" element={<Error />} />
           <Route path="/:id/user" element={<UserDashboard />} />
           <Route path="/:id/addEducation" element={<UserEducationForm />} />
-          <Route path="/:id/addWorkExperience" element={<UserWorkExpForm />} />
+          <Route path="/:id/addWork" element={<UserWorkExpForm />} />
           <Route path="/:id/addProject" element={<UserProjectForm />} />
           <Route path="/:id/addSkill" element={<UserSkillForm />} />
           <Route path="/:id/addReference" element={<UserReferenceForm />} />

@@ -1,0 +1,15 @@
+@import './variables';
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakdown) {
+    @content;
+  }
+}
+
+@mixin desktop
+{
+  @media screen and (min-width: $desktop-breakdown)
+  {
+    @content;
+  }
+}

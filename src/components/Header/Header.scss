@@ -1,10 +1,23 @@
+@import "../../styles/partials/global";
+
 .header {
-  margin-left: 16px;
-  margin-right: 16px;
+  &__link {
+    text-decoration: none;
+  }
 
   &__content {
     display: flex;
     justify-content: center;
-    border-bottom: 1px solid grey;
+    padding-top: $mobile-padding-before-headlines;
+    padding-bottom: $mobile-padding-after-headlines;
+  }
+}
+
+@include tablet {
+  .header {
+    &__content {
+      padding-top: $desktop-padding-after-headlines;
+      padding-bottom: $desktop-padding-after-headlines;
+    }
   }
 }

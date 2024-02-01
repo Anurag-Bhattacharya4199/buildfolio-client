@@ -118,10 +118,10 @@ function UserWorkExpForm() {
     <section className="userWorkExp">
       <h1 className="userWorkExp__title">Work History:</h1>
       <form className="userWorkExp__form" onSubmit={handleSubmit}>
-        <div className="userWorkExp__form-work_title">
+        <div className="userWorkExp__form-workTitle">
           <label>Work Title:</label>
           <input
-            className={`${
+            className={`userWorkExp__form-workTitleInp ${
               error.workTitleError ? "userWorkExp__form-invalidInput" : ""
             }`}
             placeholder="Work Title"
@@ -144,7 +144,7 @@ function UserWorkExpForm() {
         <div className="userWorkExp__form-company">
           <label>Company:</label>
           <input
-            className={`${
+            className={`userWorkExp__form-companyInp ${
               error.companyError ? "userWorkExp__form-invalidInput" : ""
             }`}
             placeholder="Company"
@@ -165,7 +165,7 @@ function UserWorkExpForm() {
         <div className="userWorkExp__form-desc">
           <label>Description:</label>
           <textarea
-            className={`${
+            className={`userWorkExp__form-descInp ${
               error.descError ? "userWorkExp__form-invalidInput" : ""
             }`}
             placeholder="Description of Work"
@@ -183,11 +183,11 @@ function UserWorkExpForm() {
             This field is required
           </span>
         </div>
-        <div className="userWorkExp__form-start_date">
+        <div className="userWorkExp__form-startDate">
           <label>Start Date:</label>
           <input
             type="date"
-            className={`${
+            className={`userWorkExp__form-startDateInp ${
               error.startDateError ? "userWorkExp__form-invalidInput" : ""
             }`}
             placeholder="Start Date"
@@ -208,8 +208,12 @@ function UserWorkExpForm() {
           </span>
         </div>
         <div className="userWorkExp__form-buttons">
-          <button>Add Work Experience</button>
-          <button onClick={handleCancel}>Cancel</button>
+          <button className="userWorkExp__form-submit">
+            Add Work Experience
+          </button>
+          <button onClick={handleCancel} className="userWorkExp__form-cancel">
+            Cancel
+          </button>
         </div>
       </form>
     </section>
