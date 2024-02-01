@@ -103,10 +103,10 @@ function UserEducationForm() {
     <section className="userEducation">
       <h1 className="userEducation__title">Education History:</h1>
       <form className="userEducation__form" onSubmit={handleSubmit}>
-        <div className="userEducation__form-school_name">
+        <div className="userEducation__form-schoolName">
           <label>School Name:</label>
           <input
-            className={`${
+            className={`userEducation__form-schoolNameInp ${
               error.schoolNameError ? "userForm__form-invalidInput" : ""
             }`}
             placeholder="School Name"
@@ -126,10 +126,10 @@ function UserEducationForm() {
             This field is required
           </span>
         </div>
-        <div className="userEducation__form-cert_name">
+        <div className="userEducation__form-certName">
           <label>Certification Name:</label>
           <input
-            className={`${
+            className={`userEducation__form-certNameInp ${
               error.certNameError ? "userForm__form-invalidInput" : ""
             }`}
             placeholder="Certification Name"
@@ -149,11 +149,11 @@ function UserEducationForm() {
             This field is required
           </span>
         </div>
-        <div className="userEducation__form-grad_date">
+        <div className="userEducation__form-gradDate">
           <label>Graduation Date:</label>
           <input
             type="date"
-            className={`${
+            className={`userEducation__form-gradDateInp ${
               error.gradDateError ? "userEducation__form-invalidInput" : ""
             }`}
             name="gradDate"
@@ -173,8 +173,10 @@ function UserEducationForm() {
           </span>
         </div>
         <div className="userEducation__form-buttons">
-          <button>Add Education</button>
-          <button onClick={handleCancel}>Cancel</button>
+          <button className="userEducation__form-submit">Add Education</button>
+          <button onClick={handleCancel} className="userEducation__form-cancel">
+            Cancel
+          </button>
         </div>
       </form>
     </section>

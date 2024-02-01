@@ -1,19 +1,32 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "./MainNavBar.scss";
 
 function MainNavBar() {
+  let location = useLocation();
+
+  const getHomePageStyles = () => {
+    if (location.pathname === "/") {
+      return "active-homePage";
+    }
+  };
+
+  const getUserFormStyles = () => {
+    if (location.pathname.includes("buildUser")) {
+      return "active-userForm";
+    }
+  };
+
   return (
     <nav className="navBar">
-      <div>
-        <NavLink to="/" className="navBar__link">
-          Home
-        </NavLink>
-      </div>
-      <div>
-        <NavLink to="/buildUser" className="navBar__link">
-          User Form
-        </NavLink>
-      </div>
+      <NavLink to="/" className={`${getHomePageStyles()} navBar__links`}>
+        Home
+      </NavLink>
+      <NavLink
+        to="/buildUser"
+        className={`${getUserFormStyles()} navBar__links`}
+      >
+        User Form
+      </NavLink>
     </nav>
   );
 }

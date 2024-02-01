@@ -222,7 +222,7 @@ function UserForm() {
         <div className="userForm__form-name">
           <label>Name:</label>
           <input
-            className={`${
+            className={`userForm__form-nameInp ${
               error.nameError ? "userForm__form-invalidInput" : ""
             }`}
             placeholder="Name"
@@ -243,7 +243,7 @@ function UserForm() {
         <div className="userForm__form-email">
           <label>Email Address:</label>
           <input
-            className={`${
+            className={`userForm__form-emailInp ${
               error.emailError ? "userForm__form-invalidInput" : ""
             }`}
             placeholder="Email"
@@ -264,7 +264,7 @@ function UserForm() {
         <div className="userForm__form-phoneNum">
           <label>Phone Number:</label>
           <input
-            className={`${
+            className={`userForm__form-phoneNumInp ${
               error.phoneNumError ? "userForm__form-invalidInput" : ""
             }`}
             placeholder="Phone Number"
@@ -289,7 +289,7 @@ function UserForm() {
         <div className="userForm__form-summary">
           <label>Summary:</label>
           <textarea
-            className={`${
+            className={` userForm__form-summaryInp ${
               error.summaryError ? "userForm__form-invalidInput" : ""
             }`}
             placeholder="Summary"
@@ -310,7 +310,7 @@ function UserForm() {
         <div className="userForm__form-linkedin">
           <label>LinkedIn Link:</label>
           <input
-            className={`${
+            className={`userForm__form-linkedinInp ${
               error.linkedinError ? "userForm__form-invalidInput" : ""
             }`}
             placeholder="linkedIn"
@@ -331,7 +331,7 @@ function UserForm() {
         <div className="userForm__form-github">
           <label>GitHub Link:</label>
           <input
-            className={`${
+            className={`userForm__form-gitHubInp ${
               error.githubError ? "userForm__form-invalidInput" : ""
             }`}
             placeholder="github"
@@ -352,7 +352,7 @@ function UserForm() {
         <div className="userForm__form-primaryColor">
           <label>Primary Color:</label>
           <select
-            className={`${
+            className={`userForm__form-primaryColorInp ${
               error.primaryColorError ? "userForm__form-invalidInput" : ""
             }`}
             placeholder="Please Select"
@@ -362,13 +362,27 @@ function UserForm() {
             onChange={handleChangePrimaryColor}
           >
             <option value="Please Select">Please Select</option>
-            <option value="Red">Red</option>
-            <option value="Orange">Orange</option>
-            <option value="Yellow">Yellow</option>
-            <option value="Green">Green</option>
-            <option value="Blue">Blue</option>
-            <option value="Indigo">Indigo</option>
-            <option value="Violet">Violet</option>
+            <option value="Red" className="userForm__form-selectRed">
+              Red
+            </option>
+            <option value="Orange" className="userForm__form-selectOrange">
+              Orange
+            </option>
+            <option value="Yellow" className="userForm__form-selectYellow">
+              Yellow
+            </option>
+            <option value="Green" className="userForm__form-selectGreen">
+              Green
+            </option>
+            <option value="Blue" className="userForm__form-selectBlue">
+              Blue
+            </option>
+            <option value="Indigo" className="userForm__form-selectIndigo">
+              Indigo
+            </option>
+            <option value="Violet" className="userForm__form-selectViolet">
+              Violet
+            </option>
           </select>
           <span
             className={`userForm__form-errorMsg ${
@@ -384,7 +398,7 @@ function UserForm() {
         <div className="userForm__form-secondaryColor">
           <label>Secondary Color:</label>
           <select
-            className={`${
+            className={`userForm__form-secondaryColorInp ${
               error.secondaryColorError ? "userForm__form-invalidInput" : ""
             }`}
             placeholder="Please Select"
@@ -394,13 +408,27 @@ function UserForm() {
             onChange={handleChangeSecondaryColor}
           >
             <option value="Please Select">Please Select</option>
-            <option value="Red">Red</option>
-            <option value="Orange">Orange</option>
-            <option value="Yellow">Yellow</option>
-            <option value="Green">Green</option>
-            <option value="Blue">Blue</option>
-            <option value="Indigo">Indigo</option>
-            <option value="Violet">Violet</option>
+            <option value="Red" className="userForm__form-selectRed">
+              Red
+            </option>
+            <option value="Orange" className="userForm__form-selectOrange">
+              Orange
+            </option>
+            <option value="Yellow" className="userForm__form-selectYellow">
+              Yellow
+            </option>
+            <option value="Green" className="userForm__form-selectGreen">
+              Green
+            </option>
+            <option value="Blue" className="userForm__form-selectBlue">
+              Blue
+            </option>
+            <option value="Indigo" className="userForm__form-selectIndigo">
+              Indigo
+            </option>
+            <option value="Violet" className="userForm__form-selectViolet">
+              Violet
+            </option>
           </select>
           <span
             className={`userForm__form-errorMsg ${
@@ -414,8 +442,10 @@ function UserForm() {
           </span>
         </div>
         <div className="userForm__form-buttons">
-          <button>Submit</button>
-          <button onClick={handleCancel}>Cancel</button>
+          <button className="userForm__form-submit">Submit</button>
+          <button onClick={handleCancel} className="userForm__form-cancel">
+            Cancel
+          </button>
         </div>
       </form>
     </section>

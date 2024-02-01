@@ -1,10 +1,25 @@
+@import "../../styles/partials/global";
+
 .footer {
-  margin: 16px;
-  text-align: center;
-  border-top: 1px solid black;
+  padding-top: $mobile-padding-between-components;
+  padding-bottom: $mobile-padding-between-components;
+  display: flex;
+  justify-content: center;
 
   &__icons {
+    padding-top: $mobile-padding-between-components;
     display: flex;
     justify-content: space-between;
+  }
+}
+
+@include tablet {
+  .footer {
+    padding-top: $desktop-padding-between-components;
+    padding-bottom: $desktop-padding-between-components;
+
+    &__icons {
+      padding-top: $desktop-padding-between-components;
+    }
   }
 }

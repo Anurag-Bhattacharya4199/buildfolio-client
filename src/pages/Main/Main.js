@@ -26,8 +26,10 @@ function Main() {
           with multiple tabs will be created for user viewing and sharing
         </p>
       </div>
-      <div>
-        <button onClick={handleSubmit}>Let's Build your User!</button>
+      <div className="mainContent__buttonSection">
+        <button onClick={handleSubmit} className="mainContent__button">
+          Let's Build your User!
+        </button>
       </div>
     </section>
   );
