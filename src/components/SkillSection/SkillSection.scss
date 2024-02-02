@@ -1,0 +1,40 @@
+@import "../../styles/partials/global";
+
+.skillSection {
+  &__buttons {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $Grey;
+    padding: $mobile-padding-between-components;
+
+    &-show, &-hide {
+      height: 36px;
+      border-radius: 20px;
+      border: 1px solid lightgray;
+      width: 47%;
+      
+      &:hover {
+        cursor: pointer;
+        background-color: $Yellow;
+      }
+    }
+  }
+
+  &__list {
+    padding-top: $mobile-padding-between-components;
+  }
+}
+
+@include tablet {
+  .skillSection {
+    &__buttons {
+      padding: $desktop-padding-between-components;
+    }
+
+    &__list {
+      padding-top: $desktop-padding-between-components;
+    }
+  }
+}

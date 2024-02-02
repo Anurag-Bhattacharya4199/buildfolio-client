@@ -27,6 +27,12 @@
     padding: $mobile-padding-between-components;
     display: flex;
     justify-content: space-evenly;
+
+    &-links {
+      &:hover {
+        background-color: lightgray;
+      }
+    }
   }
 }
 

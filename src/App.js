@@ -16,10 +16,6 @@ import UserWorkExpForm from "./pages/UserWorkExpForm/UserWorkExpForm";
 import UserProjectForm from "./pages/UserProjectForm/UserProjectForm";
 import UserSkillForm from "./pages/UserSkillForm/UserSkillForm";
 import UserReferenceForm from "./pages/UserReferenceForm/UserReferenceForm";
-import UserPortfolio from "./pages/UserPortfolio/UserPortfolio";
-import UserAbout from "./pages/UserAbout/UserAbout";
-import { useEffect } from "react";
-import UserReviews from "./pages/UserReviews/UserReviews";
 import Error from "./pages/Error/Error";
 
 function App() {
@@ -37,9 +33,7 @@ function App() {
           <Route path="/:id/addProject" element={<UserProjectForm />} />
           <Route path="/:id/addSkill" element={<UserSkillForm />} />
           <Route path="/:id/addReference" element={<UserReferenceForm />} />
-          <Route path="/:id/user/portfolio" element={<UserPortfolio />} />
-          <Route path="/:id/user/portfolio/about" element={<UserAbout />} />
-          <Route path="/:id/user/portfolio/review" element={<UserReviews />} />
+          {/* <Route path="/:id/user/portfolio" element={<UserPortfolio />} /> */}
         </Routes>
         <Footer />
       </BrowserRouter>

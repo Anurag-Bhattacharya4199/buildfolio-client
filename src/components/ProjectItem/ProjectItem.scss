@@ -1,0 +1,11 @@
+@import "../../styles/partials/global";
+
+.projectContent {
+  padding-bottom: $mobile-padding-between-components;
+}
+
+@include tablet {
+  .projectContent {
+    padding-bottom: $desktop-padding-between-components;
+  }
+}

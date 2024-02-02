@@ -1,0 +1,11 @@
+@import "../../styles/partials/global";
+
+.skillItem {
+  padding-bottom: $mobile-padding-between-components;
+}
+
+@include tablet {
+  .skillItem {
+    padding-bottom: $desktop-padding-between-components;
+  }
+}
