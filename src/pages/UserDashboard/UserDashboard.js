@@ -9,6 +9,11 @@ import Project from "../../assets/icons/projects.svg";
 import Work from "../../assets/icons/work.svg";
 import Skill from "../../assets/icons/skills.svg";
 import Reference from "../../assets/icons/references.svg";
+import EducationSection from "../../components/EducationSection/EducationSection";
+import ProjectSection from "../../components/ProjectSection/ProjectSection";
+import WorkSection from "../../components/WorkSection/WorkSection";
+import SkillSection from "../../components/SkillSection/SkillSection";
+import ReferenceSection from "../../components/ReferenceSection/ReferenceSection";
 
 function UserDashboard() {
   let { id } = useParams();
@@ -43,6 +48,43 @@ function UserDashboard() {
             {user.user_name}'s Profile:
           </h1>
         </div>
+        <div className="userDashboard__buttons">
+          <NavLink
+            to={`/${id}/addEducation`}
+            className="userDashboard__buttons-links"
+          >
+            <h3>Add Education:</h3>
+            <img src={Education} alt="Education-icon" />
+          </NavLink>
+          <NavLink
+            to={`/${id}/addProject`}
+            className="userDashboard__buttons-links"
+          >
+            <h3>Add Project:</h3>
+            <img src={Project} alt="Project-icon" />
+          </NavLink>
+          <NavLink
+            to={`/${id}/addWork`}
+            className="userDashboard__buttons-links"
+          >
+            <h3>Add Work:</h3>
+            <img src={Work} alt="Work-icon" />
+          </NavLink>
+          <NavLink
+            to={`/${id}/addSkill`}
+            className="userDashboard__buttons-links"
+          >
+            <h3>Add Skill:</h3>
+            <img src={Skill} alt="Skill-icon" />
+          </NavLink>
+          <NavLink
+            to={`/${id}/addReference`}
+            className="userDashboard__buttons-links"
+          >
+            <h3>Add Reference:</h3>
+            <img src={Reference} alt="Reference-icon" />
+          </NavLink>
+        </div>
         <div className="userDashboard__content">
           <div className="userDashboard__contacts">
             <h2 className={`${user.user_secondaryColor}`}>Email Address</h2>
@@ -69,23 +111,11 @@ function UserDashboard() {
             </a>
           </div>
         </div>
-        <div className="userDashboard__buttons">
-          <NavLink to={`/${id}/addEducation`}>
-            <img src={Education} alt="Education-icon" />
-          </NavLink>
-          <NavLink to={`/${id}/addProject`}>
-            <img src={Project} alt="Project-icon" />
-          </NavLink>
-          <NavLink to={`/${id}/addWork`}>
-            <img src={Work} alt="Work-icon" />
-          </NavLink>
-          <NavLink to={`/${id}/addSkill`}>
-            <img src={Skill} alt="Skill-icon" />
-          </NavLink>
-          <NavLink to={`/${id}/addReference`}>
-            <img src={Reference} alt="Reference-icon" />
-          </NavLink>
-        </div>
+        <EducationSection />
+        <ProjectSection />
+        <WorkSection />
+        <SkillSection />
+        <ReferenceSection />
       </section>
     );
   }
