@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Project from "../Projects/Projects";
 
 function ProjectLists() {
   let { id } = useParams();
+  const navigate = useNavigate();
   const [hasProjectLoaded, setHasProjectLoaded] = useState(false);
   const [projects, setProjects] = useState("");
 
@@ -14,6 +15,9 @@ function ProjectLists() {
       .then((res) => {
         setProjects(res.data);
         setHasProjectLoaded(true);
+      })
+      .catch(() => {
+        navigate("/error");
       });
   };
 

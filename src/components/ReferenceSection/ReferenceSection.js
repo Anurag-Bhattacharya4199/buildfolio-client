@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ReferenceItem from "../ReferenceItem/ReferenceItem";
 import "./ReferenceSection.scss";
 
 function ReferenceSection() {
   let { id } = useParams();
+  const navigate = useNavigate();
   const [hasRefLoaded, setHasRefLoaded] = useState(false);
   const [refs, setRefs] = useState("");
   const [showRefs, setShowRefs] = useState(false);
@@ -16,6 +17,9 @@ function ReferenceSection() {
       .then((res) => {
         setRefs(res.data);
         setHasRefLoaded(true);
+      })
+      .catch(() => {
+        navigate("/error");
       });
   };
 

@@ -7,7 +7,7 @@ function Project(props) {
   return (
     <section className="projectItem">
       <div className="projectItem__content">
-        <a href={link} target="_blank">
+        <a href={link} target="_blank" rel="noreferrer">
           <h2>{projectName}</h2>
         </a>
         <p>{desc}</p>

@@ -10,10 +10,10 @@ function SocialInfo(props) {
       <h1 className="socialInfo__title">Social Accounts:</h1>
       <div className="socialInfo__socialLinks">
         <a href={linkedIn} target="_blank" rel="noreferrer">
-          <img src={LinkedInIcon} />
+          <img src={LinkedInIcon} alt="linkedIn Icon" />
         </a>
-        <a href={github} target="_blank" rel="noreferred">
-          <img src={GitHubIcon} />
+        <a href={github} target="_blank" rel="noreferrer">
+          <img src={GitHubIcon} alt="github Icon" />
         </a>
       </div>
     </div>

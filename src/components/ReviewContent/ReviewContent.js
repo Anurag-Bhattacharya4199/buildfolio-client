@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import UserDashboard from "../UserDashboard/UserDashboard";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -7,6 +7,7 @@ import "./ReviewContent.scss";
 
 function ReviewContent() {
   let { id } = useParams();
+  const navigate = useNavigate();
   const [hasRefLoaded, setHasRefLoaded] = useState(false);
   const [refs, setRefs] = useState("");
 
@@ -16,6 +17,9 @@ function ReviewContent() {
       .then((res) => {
         setRefs(res.data);
         setHasRefLoaded(true);
+      })
+      .catch(() => {
+        navigate("/error");
       });
   };
 
