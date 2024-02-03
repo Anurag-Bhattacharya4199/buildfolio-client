@@ -1,0 +1,43 @@
+@import "../../styles/partials/global";
+
+.error {
+  text-align: center;
+  padding-left: $mobile-padding-between-components;
+  padding-right: $mobile-padding-between-components;
+
+  &__text {
+    padding-bottom: $mobile-padding-between-components;
+  }
+
+  &__buttonContainer {
+    overflow: hidden;
+    background-color: $Grey;
+  }
+
+  &__button {
+    height: 36px;
+    border-radius: 20px;
+    border: 1px solid lightgray;
+    padding: 16px;
+
+    &:hover {
+      background-color: $Yellow;
+      cursor: pointer;
+    }
+  }
+}
+
+@include tablet {
+  .error {
+    padding-left: $desktop-padding-between-components;
+    padding-right: $desktop-padding-between-components;
+  
+    &__text {
+      padding-bottom: $desktop-padding-between-components;
+    }
+
+    &__button {
+      padding: 320px;
+    }
+  }
+}

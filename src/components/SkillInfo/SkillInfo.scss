@@ -1,0 +1,21 @@
+@import "../../styles/partials/global";
+
+.skillInfo {
+  text-align: center;
+  border: 1px solid $Black;
+  padding: 16px;
+
+  &__title {
+    padding-bottom: $mobile-padding-between-components;
+  }
+}
+
+@include tablet {
+  .skillInfo {
+    padding: 32px;
+
+    &__title {
+      padding-bottom: $desktop-padding-between-components;
+    }
+  }
+}

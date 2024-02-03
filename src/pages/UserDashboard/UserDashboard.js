@@ -14,6 +14,7 @@ import ProjectSection from "../../components/ProjectSection/ProjectSection";
 import WorkSection from "../../components/WorkSection/WorkSection";
 import SkillSection from "../../components/SkillSection/SkillSection";
 import ReferenceSection from "../../components/ReferenceSection/ReferenceSection";
+import BuildPortfolio from "../../components/BuildPortfolio/BuildPortfolio";
 
 function UserDashboard() {
   let { id } = useParams();
@@ -116,6 +117,7 @@ function UserDashboard() {
         <WorkSection />
         <SkillSection />
         <ReferenceSection />
+        <BuildPortfolio />
       </section>
     );
   }

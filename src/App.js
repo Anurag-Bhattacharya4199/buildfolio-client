@@ -1,11 +1,5 @@
 import "./App.scss";
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  useLocation,
-  useParams,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./pages/Main/Main";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -17,6 +11,9 @@ import UserProjectForm from "./pages/UserProjectForm/UserProjectForm";
 import UserSkillForm from "./pages/UserSkillForm/UserSkillForm";
 import UserReferenceForm from "./pages/UserReferenceForm/UserReferenceForm";
 import Error from "./pages/Error/Error";
+import UserPortfolioHome from "./pages/UserPortfolioHome/UserPortfolioHome";
+import UserPortfolioAbout from "./pages/UserPortfolioAbout/UserPortfolioAbout";
+import UserPortfolioReviews from "./pages/UserPortfolioReviews/UserPortfolioReviews";
 
 function App() {
   return (
@@ -33,7 +30,15 @@ function App() {
           <Route path="/:id/addProject" element={<UserProjectForm />} />
           <Route path="/:id/addSkill" element={<UserSkillForm />} />
           <Route path="/:id/addReference" element={<UserReferenceForm />} />
-          {/* <Route path="/:id/user/portfolio" element={<UserPortfolio />} /> */}
+          <Route path="/:id/user/portfolio" element={<UserPortfolioHome />} />
+          <Route
+            path="/:id/user/portfolio/about"
+            element={<UserPortfolioAbout />}
+          />
+          <Route
+            path="/:id/user/portfolio/reviews"
+            element={<UserPortfolioReviews />}
+          />
         </Routes>
         <Footer />
       </BrowserRouter>

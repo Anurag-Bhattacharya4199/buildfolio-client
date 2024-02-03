@@ -1,0 +1,23 @@
+@import "../../styles/partials/global";
+
+.educationInfo {
+  text-align: center;
+  border: 1px solid $Black;
+  padding: 16px;
+  margin-bottom: $mobile-padding-between-components;
+  
+  &__title {
+    padding-bottom: $mobile-padding-between-components;
+  }
+}
+
+@include tablet {
+  .educationInfo {
+    padding: 32px;
+    margin-bottom: $desktop-padding-between-components;
+    
+    &__title {
+      padding-bottom: $desktop-padding-between-components;
+    }
+  }
+}
