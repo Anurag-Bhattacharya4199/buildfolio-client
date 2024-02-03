@@ -1,0 +1,30 @@
+@import "../../styles/partials/global";
+
+.reviewContent {
+  padding-left: $mobile-padding-between-components;
+  padding-right: $mobile-padding-between-components;
+  text-align: center;
+  
+  &__content {
+    padding: 16px;
+    border: 1px solid $Black;
+  }
+  &__title {
+    padding-bottom: $mobile-padding-between-components;
+  }
+}
+
+@include tablet {
+  .reviewContent {
+    padding-left: $desktop-padding-between-components;
+    padding-right: $desktop-padding-between-components;
+
+    &__content {
+      padding: 32px;
+    }
+
+    &__title {
+      padding-bottom: $desktop-padding-between-components;
+    }
+  }
+}

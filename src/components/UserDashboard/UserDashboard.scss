@@ -1,0 +1,32 @@
+@import "../../styles/partials/global";
+
+.userDashboardContent {
+  overflow: hidden;
+  background-color: $Grey;
+  padding: $mobile-padding-between-components;
+  margin-bottom: $mobile-padding-between-components;
+  text-align: center;
+
+  &__button {
+  height: 36px;
+  border-radius: 20px;
+  border: 1px solid lightgray;
+  padding: 16px;
+
+  &:hover {
+    background-color: $Yellow;
+    cursor: pointer;
+  }
+  }
+}
+
+@include tablet {
+  .userDashboardContent {
+    padding: $desktop-padding-between-components;
+    margin-bottom: $desktop-padding-between-components;
+
+    &__button {
+      padding: 32px;
+    }
+  }
+}

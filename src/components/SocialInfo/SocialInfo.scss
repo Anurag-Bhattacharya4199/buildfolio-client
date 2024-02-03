@@ -1,0 +1,17 @@
+@import "../../styles/partials/global";
+
+.socialInfo {
+  &__socialLinks {
+    display: flex;
+    justify-content: space-between;
+    padding-top: $mobile-padding-between-components;
+  }
+}
+
+@include tablet {
+  .socialInfo {
+    &__socialLinks {
+      padding-top: $desktop-padding-between-components;
+    }
+  }
+}

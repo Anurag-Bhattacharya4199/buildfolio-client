@@ -1,0 +1,12 @@
+@import "../../styles/partials/global";
+
+.userSummary {
+  text-align: center;
+  padding-bottom: $mobile-padding-between-components;
+}
+
+@include tablet {
+  .userSummary {
+    padding-bottom: $desktop-padding-between-components;
+  }
+}
