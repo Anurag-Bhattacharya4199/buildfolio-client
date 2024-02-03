@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import WorkItem from "../WorkItem/WorkItem";
 import "./WorkInfo.scss";
 
 function WorkInfo() {
   let { id } = useParams();
+  const navigate = useNavigate();
   const [hasWorkLoaded, setHasWorkLoaded] = useState(false);
   const [works, setWorks] = useState("");
 
@@ -15,6 +16,9 @@ function WorkInfo() {
       .then((res) => {
         setWorks(res.data);
         setHasWorkLoaded(true);
+      })
+      .catch(() => {
+        navigate("/error");
       });
   };
 

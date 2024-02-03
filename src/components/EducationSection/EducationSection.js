@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import EducationItem from "../EducationItem/EducationItem";
 import "./EducationSection.scss";
 
 function EducationSection() {
   let { id } = useParams();
+  const navigate = useNavigate();
   const [hasEdLoaded, setHasEdLoaded] = useState(false);
   const [educations, setEducations] = useState("");
   const [showEducations, setShowEducations] = useState(false);
@@ -16,6 +17,9 @@ function EducationSection() {
       .then((res) => {
         setEducations(res.data);
         setHasEdLoaded(true);
+      })
+      .catch(() => {
+        navigate("/error");
       });
   };
 

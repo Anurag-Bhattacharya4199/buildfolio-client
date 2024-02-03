@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import WorkItem from "../WorkItem/WorkItem";
 import "./WorkSection.scss";
 
 function WorkSection() {
   let { id } = useParams();
+  const navigate = useNavigate();
   const [hasWorkLoaded, setHasWorkLoaded] = useState(false);
   const [works, setWorks] = useState("");
   const [showWorks, setShowWorks] = useState(false);
@@ -16,6 +17,9 @@ function WorkSection() {
       .then((res) => {
         setWorks(res.data);
         setHasWorkLoaded(true);
+      })
+      .catch(() => {
+        navigate("/error");
       });
   };
 

@@ -1,19 +1,25 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import SkillItem from "../SkillItem/SkillItem";
 import "./SkillInfo.scss";
 
 function SkillInfo() {
   let { id } = useParams();
+  const navigate = useNavigate();
   const [hasSkillLoaded, setHasSkillLoaded] = useState(false);
   const [skills, setSkills] = useState("");
 
   const fetchSkillDetails = async () => {
-    await axios.get(`http://localhost:8080/users/${id}/skills`).then((res) => {
-      setSkills(res.data);
-      setHasSkillLoaded(true);
-    });
+    await axios
+      .get(`http://localhost:8080/users/${id}/skills`)
+      .then((res) => {
+        setSkills(res.data);
+        setHasSkillLoaded(true);
+      })
+      .catch(() => {
+        navigate("/error");
+      });
   };
 
   useEffect(() => {

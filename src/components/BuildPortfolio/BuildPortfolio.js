@@ -37,6 +37,9 @@ function BuildPortfolio() {
       .then((res) => {
         setProjects(res.data);
         setHasProjectLoaded(true);
+      })
+      .catch(() => {
+        navigate("/error");
       });
   };
 
@@ -46,14 +49,22 @@ function BuildPortfolio() {
       .then((res) => {
         setWorks(res.data);
         setHasWorkLoaded(true);
+      })
+      .catch(() => {
+        navigate("/error");
       });
   };
 
   const fetchSkillDetails = async () => {
-    await axios.get(`http://localhost:8080/users/${id}/skills`).then((res) => {
-      setSkills(res.data);
-      setHasSkillLoaded(true);
-    });
+    await axios
+      .get(`http://localhost:8080/users/${id}/skills`)
+      .then((res) => {
+        setSkills(res.data);
+        setHasSkillLoaded(true);
+      })
+      .catch(() => {
+        navigate("/error");
+      });
   };
 
   const fetchRefDetails = async () => {
@@ -62,6 +73,9 @@ function BuildPortfolio() {
       .then((res) => {
         setRefs(res.data);
         setHasRefLoaded(true);
+      })
+      .catch(() => {
+        navigate("/error");
       });
   };
 

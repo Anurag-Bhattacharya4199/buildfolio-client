@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import EducationItem from "../EducationItem/EducationItem";
 import "./EducationInfo.scss";
 
 function EducationInfo() {
   let { id } = useParams();
+  const navigate = useNavigate();
   const [hasEdLoaded, setHasEdLoaded] = useState(false);
   const [educations, setEducations] = useState("");
 
@@ -15,6 +16,9 @@ function EducationInfo() {
       .then((res) => {
         setEducations(res.data);
         setHasEdLoaded(true);
+      })
+      .catch(() => {
+        navigate("/error");
       });
   };
 

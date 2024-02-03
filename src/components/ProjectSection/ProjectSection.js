@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ProjectItem from "../ProjectItem/ProjectItem";
 import "./ProjectSection.scss";
 
 function ProjectSection() {
   let { id } = useParams();
+  const navigate = useNavigate();
   const [hasProjectLoaded, setHasProjectLoaded] = useState(false);
   const [projects, setProjects] = useState("");
   const [showProjects, setShowProjects] = useState(false);
@@ -16,6 +17,9 @@ function ProjectSection() {
       .then((res) => {
         setProjects(res.data);
         setHasProjectLoaded(true);
+      })
+      .catch(() => {
+        navigate("/error");
       });
   };
 
