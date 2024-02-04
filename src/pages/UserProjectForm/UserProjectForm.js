@@ -18,11 +18,13 @@ function UserProjectForm() {
 
   const navigate = useNavigate();
 
+  //Handle Cancel Button Function
   function handleCancel() {
     alert("Project is not added");
     navigate(`/${id}/user`);
   }
 
+  //Handle Input Change Functions
   const handleChangeProjectName = (event) => {
     const projectName = event.target.value;
     setProjectName(projectName);
@@ -38,6 +40,7 @@ function UserProjectForm() {
     setLink(link);
   };
 
+  //Post Project Function
   const postProject = async (projectName, desc, link) => {
     const newProject = {
       user_id: id,
@@ -57,6 +60,7 @@ function UserProjectForm() {
     }
   };
 
+  //Form Validation
   const isFormValid = () => {
     let formComplete = true;
 
@@ -86,6 +90,7 @@ function UserProjectForm() {
     return formComplete;
   };
 
+  //Handle Submit Button Function
   const handleSubmit = async (event) => {
     event.preventDefault();
 

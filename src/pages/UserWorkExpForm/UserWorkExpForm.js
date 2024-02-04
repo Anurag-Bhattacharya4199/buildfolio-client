@@ -20,11 +20,13 @@ function UserWorkExpForm() {
 
   const navigate = useNavigate();
 
+  //Handle Cancel Button Function
   function handleCancel() {
     alert("Work Experience is not added");
     navigate(`/${id}/user`);
   }
 
+  //Handle Input Change Function
   const handleChangeWorkTitle = (event) => {
     const workTitle = event.target.value;
     setWorkTitle(workTitle);
@@ -45,6 +47,7 @@ function UserWorkExpForm() {
     setStartDate(startDate);
   };
 
+  //Post Work Experience Function
   const postWorkExp = async (workTitle, company, desc, startDate) => {
     const newWorkExp = {
       user_id: id,
@@ -65,6 +68,7 @@ function UserWorkExpForm() {
     }
   };
 
+  //Form Validation
   const isFormValid = () => {
     let formComplete = true;
 
@@ -100,6 +104,7 @@ function UserWorkExpForm() {
     return formComplete;
   };
 
+  //Handle Submit Button Function
   const handleSubmit = async (event) => {
     event.preventDefault();
 

@@ -7,6 +7,7 @@ import "./AboutContent.scss";
 
 function AboutContent() {
   return (
+    //Returns all Components needed for the About Portfolio Page Content
     <section className="aboutContent">
       <UserDashboard />
       <UserSummary />

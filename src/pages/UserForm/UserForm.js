@@ -29,6 +29,7 @@ function UserForm() {
 
   const navigate = useNavigate();
 
+  //Auto Format Phone Number, Only Handles USA OR CANADA Phone Num Extension
   const handlePhoneNumberFormat = () => {
     const phoneNumArray = phoneNum.split("");
 
@@ -49,11 +50,13 @@ function UserForm() {
     }
   };
 
+  //Handle Cancel Button Function
   function handleCancel() {
     alert("User is not created");
     navigate("/");
   }
 
+  //Handle Input Change Functions
   const handleChangeName = (event) => {
     const name = event.target.value;
     setName(name);
@@ -94,6 +97,7 @@ function UserForm() {
     setSecondaryColor(secondaryColor);
   };
 
+  //Post User Function
   const postUser = async (name, email, phoneNum, summary, linkedin, github) => {
     const newUser = {
       user_name: name,
@@ -116,6 +120,7 @@ function UserForm() {
     }
   };
 
+  //Form Validation
   const isFormValid = () => {
     let formComplete = true;
 
@@ -188,6 +193,7 @@ function UserForm() {
     return formComplete;
   };
 
+  //Handle Submit Button Function
   const handleSubmit = async (event) => {
     event.preventDefault();
 

@@ -1,12 +1,8 @@
 @import "../../styles/partials/global";
 
 .userForm {
-  padding-top: $mobile-padding-between-components;
-  padding-bottom: $mobile-padding-between-components;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-left: 16px;
-  margin-right: 16px;
+  padding: $mobile-padding-between-components 1rem;
+  margin: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,8 +27,7 @@
 
     &-nameInp, &-emailInp, &-phoneNumInp, &-summaryInp, &-linkedinInp, &-gitHubInp, &-primaryColorInp, &-secondaryColorInp {
       height: 36px;
-      padding-left: $mobile-padding-between-components;
-      padding-right: $mobile-padding-between-components;
+      padding: 0 $mobile-padding-between-components;
       border-radius: 20px;
       border: 1px solid $Black;
 
@@ -61,8 +56,6 @@
         cursor: pointer;
         background-color: $Yellow;
       }
-
-
     }
 
     &-invalidInput {
@@ -115,8 +108,7 @@
 
 @include tablet {
   .userForm {
-    padding-top: $desktop-padding-between-components;
-    padding-bottom: $desktop-padding-between-components;
+    padding: $desktop-padding-between-components 2rem;
 
     &__form {
       margin-top: $desktop-padding-between-components;
@@ -129,8 +121,7 @@
       &-nameInp, &-emailInp, &-phoneNumInp, &-summaryInp, &-linkedinInp, &-gitHubInp, &-primaryColorInp, &-secondaryColorInp {
         height: 38px;
         width: auto;
-        padding-left: $desktop-padding-between-components;
-        padding-right: $desktop-padding-between-components;
+        padding: 0 $desktop-padding-between-components;
       }
   
       &-buttons {

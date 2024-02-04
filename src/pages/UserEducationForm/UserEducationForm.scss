@@ -1,12 +1,8 @@
 @import "../../styles/partials/global";
 
 .userEducation {
-  padding-top: $mobile-padding-between-components;
-  padding-bottom: $mobile-padding-between-components;
-  padding-left: 16px;
-  padding-right: 16px;
-  margin-left: 16px;
-  margin-right: 16px;
+  padding: $mobile-padding-between-components 1rem;
+  margin: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,8 +27,7 @@
 
     &-schoolNameInp, &-certNameInp, &-gradDateInp {
       height: 36px;
-      padding-left: $mobile-padding-between-components;
-      padding-right: $mobile-padding-between-components;
+      padding: 0 $mobile-padding-between-components;
       border-radius: 20px;
       border: 1px solid $Black;
 
@@ -85,8 +80,7 @@
 
 @include tablet {
   .userEducation {
-    padding-top: $desktop-padding-between-components;
-    padding-bottom: $desktop-padding-between-components;
+    padding: $desktop-padding-between-components 2rem;
 
     &__form {
       margin-top: $desktop-padding-between-components;
@@ -99,8 +93,7 @@
       &-schoolNameInp, &-certNameInp, &-gradDateInp {
         height: 38px;
         width: auto;
-        padding-left: $desktop-padding-between-components;
-        padding-right: $desktop-padding-between-components;
+        padding: 0 $desktop-padding-between-components;
       }
   
       &-buttons {

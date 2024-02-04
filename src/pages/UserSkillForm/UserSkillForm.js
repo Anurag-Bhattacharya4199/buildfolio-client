@@ -16,11 +16,13 @@ function UserSkillForm() {
 
   const navigate = useNavigate();
 
+  //Handle Cancel Button Function
   function handleCancel() {
     alert("Skill is not added");
     navigate(`/${id}/user`);
   }
 
+  //Handle Input Change Function
   const handleChangeSkillName = (event) => {
     const skillName = event.target.value;
     setSkillName(skillName);
@@ -31,6 +33,7 @@ function UserSkillForm() {
     setProfLvl(profLvl);
   };
 
+  //Post Skill Function
   const postSkill = async (skillName, profLvl) => {
     const newSkill = {
       user_id: id,
@@ -49,6 +52,7 @@ function UserSkillForm() {
     }
   };
 
+  //Form Validation
   const isFormValid = () => {
     let formComplete = true;
 
@@ -77,6 +81,7 @@ function UserSkillForm() {
     return formComplete;
   };
 
+  //Handle Submit Button Function
   const handleSubmit = async (event) => {
     event.preventDefault();
 

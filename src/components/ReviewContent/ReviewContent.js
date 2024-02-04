@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ReferenceItem from "../ReferenceItem/ReferenceItem";
 import "./ReviewContent.scss";
+import { API_BASE_URL } from "../../utils/utils";
 
 function ReviewContent() {
   let { id } = useParams();
@@ -11,9 +12,10 @@ function ReviewContent() {
   const [hasRefLoaded, setHasRefLoaded] = useState(false);
   const [refs, setRefs] = useState("");
 
+  //Fetch Reference Details for Specific User
   const fetchRefDetails = async () => {
     await axios
-      .get(`http://localhost:8080/users/${id}/references`)
+      .get(`${API_BASE_URL}/users/${id}/references`)
       .then((res) => {
         setRefs(res.data);
         setHasRefLoaded(true);
@@ -23,6 +25,7 @@ function ReviewContent() {
       });
   };
 
+  //Use Effect to Fetch Call
   useEffect(() => {
     fetchRefDetails();
   }, []);

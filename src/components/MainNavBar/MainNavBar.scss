@@ -3,11 +3,8 @@
 .navBar {
   display: flex;
   justify-content: space-between;
-  padding-top: $mobile-padding-before-headlines;
-  gap: 16px;
-  padding-bottom: $mobile-padding-after-headlines;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: $mobile-padding-before-headlines 1rem $mobile-padding-after-headlines;
+  gap: 1rem;
 
   &__links {
     color: $Black;
@@ -18,9 +15,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 13px;
-    text-transform: capitalize;
     text-decoration: none;
+    font-family: "Roboto-Bold";
+    font-weight: 700;
   }
 
   .active-homePage, .active-userForm{

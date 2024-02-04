@@ -7,19 +7,21 @@ import ProjectLists from "../ProjectsList/ProjectsList";
 import UserDashboard from "../UserDashboard/UserDashboard";
 import ContactInfo from "../ContactInfo/ContactInfo";
 import SocialInfo from "../SocialInfo/SocialInfo";
+import { API_BASE_URL } from "../../utils/utils";
 
 function BuildPortfolioContent() {
   let { id } = useParams();
   let navigate = useNavigate();
 
   const [hasLoaded, setHasLoaded] = useState(false);
-  const [users, setUsers] = useState("");
+  const [user, setUser] = useState("");
 
+  //Fetch Specific User Details
   const fetchUserDetails = async () => {
     await axios
-      .get(`http://localhost:8080/users/${id}`)
+      .get(`${API_BASE_URL}/users/${id}`)
       .then((response) => {
-        setUsers(response.data);
+        setUser(response.data);
         setHasLoaded(true);
       })
       .catch(() => {
@@ -27,10 +29,12 @@ function BuildPortfolioContent() {
       });
   };
 
+  //Use Effect to call Fetch Call
   useEffect(() => {
     fetchUserDetails();
   }, []);
 
+  //If User Data has been loaded, the contents are displayed
   if (!hasLoaded) {
     return null;
   } else {
@@ -45,18 +49,12 @@ function BuildPortfolioContent() {
           />
         </div>
         <div className="buildPortfolioContent__summary">
-          {users.user_summary}
+          {user.user_summary}
         </div>
-        <ProjectLists />
+        <ProjectLists primColor={user.user_primaryColor} />
         <div className="buildPortfolioContent__contactInfo">
-          <ContactInfo
-            email={users.user_email}
-            phoneNum={users.user_phoneNum}
-          />
-          <SocialInfo
-            linkedIn={users.user_linkedIn}
-            github={users.user_github}
-          />
+          <ContactInfo email={user.user_email} phoneNum={user.user_phoneNum} />
+          <SocialInfo linkedIn={user.user_linkedIn} github={user.user_github} />
         </div>
       </section>
     );

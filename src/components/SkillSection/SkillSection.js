@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import SkillItem from "../SkillItem/SkillItem";
 import "./SkillSection.scss";
+import { API_BASE_URL } from "../../utils/utils";
 
 function SkillSection() {
   let { id } = useParams();
@@ -11,9 +12,10 @@ function SkillSection() {
   const [skills, setSkills] = useState("");
   const [showSkills, setShowSkills] = useState(false);
 
+  //Fetch Skill Details for Specific User
   const fetchSkillDetails = async () => {
     await axios
-      .get(`http://localhost:8080/users/${id}/skills`)
+      .get(`${API_BASE_URL}/users/${id}/skills`)
       .then((res) => {
         setSkills(res.data);
         setHasSkillLoaded(true);
@@ -23,14 +25,17 @@ function SkillSection() {
       });
   };
 
+  //Use Effect to Fetch Call
   useEffect(() => {
     fetchSkillDetails();
   }, []);
 
+  //Load Skills Section
   const loadSkills = () => {
     setShowSkills(true);
   };
 
+  //Hide Skills Section
   const hideSkills = () => {
     setShowSkills(false);
   };

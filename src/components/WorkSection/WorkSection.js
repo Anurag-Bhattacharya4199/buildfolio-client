@@ -11,6 +11,7 @@ function WorkSection() {
   const [works, setWorks] = useState("");
   const [showWorks, setShowWorks] = useState(false);
 
+  //Fetch Work Details for Specific User
   const fetchWorkDetails = async () => {
     await axios
       .get(`http://localhost:8080/users/${id}/workExperiences`)
@@ -23,14 +24,17 @@ function WorkSection() {
       });
   };
 
+  //Use Effect to Fetch Call
   useEffect(() => {
     fetchWorkDetails();
   }, []);
 
+  //Load Work Section
   const loadWorks = () => {
     setShowWorks(true);
   };
 
+  //Hide Work Section
   const hideWorks = () => {
     setShowWorks(false);
   };

@@ -8,16 +8,14 @@
   &__content {
     display: flex;
     justify-content: center;
-    padding-top: $mobile-padding-before-headlines;
-    padding-bottom: $mobile-padding-after-headlines;
+    padding: $mobile-padding-before-headlines 0 $mobile-padding-after-headlines;
   }
 }
 
 @include tablet {
   .header {
     &__content {
-      padding-top: $desktop-padding-after-headlines;
-      padding-bottom: $desktop-padding-after-headlines;
+      padding: $desktop-padding-before-headlines 0 $desktop-padding-after-headlines;
     }
   }
 }

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import WorkItem from "../WorkItem/WorkItem";
 import "./WorkInfo.scss";
+import { API_BASE_URL } from "../../utils/utils";
 
 function WorkInfo() {
   let { id } = useParams();
@@ -10,9 +11,10 @@ function WorkInfo() {
   const [hasWorkLoaded, setHasWorkLoaded] = useState(false);
   const [works, setWorks] = useState("");
 
+  //Fetch Work Details for Specific User
   const fetchWorkDetails = async () => {
     await axios
-      .get(`http://localhost:8080/users/${id}/workExperiences`)
+      .get(`${API_BASE_URL}/users/${id}/workExperiences`)
       .then((res) => {
         setWorks(res.data);
         setHasWorkLoaded(true);
@@ -22,10 +24,12 @@ function WorkInfo() {
       });
   };
 
+  //Use Effect to Fetch Call
   useEffect(() => {
     fetchWorkDetails();
   }, []);
 
+  //If Work Data is loaded, Work Info is displayed
   if (!hasWorkLoaded) {
     return null;
   } else {

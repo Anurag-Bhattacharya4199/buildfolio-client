@@ -1,12 +1,11 @@
 @import "../../styles/partials/global";
 
 .reviewContent {
-  padding-left: $mobile-padding-between-components;
-  padding-right: $mobile-padding-between-components;
+  padding: 0 $mobile-padding-between-components;
   text-align: center;
   
   &__content {
-    padding: 16px;
+    padding: 1rem;
     border: 1px solid $Black;
   }
   &__title {
@@ -16,11 +15,10 @@
 
 @include tablet {
   .reviewContent {
-    padding-left: $desktop-padding-between-components;
-    padding-right: $desktop-padding-between-components;
+    padding: 0 $desktop-padding-between-components;
 
     &__content {
-      padding: 32px;
+      padding: 2rem;
     }
 
     &__title {
