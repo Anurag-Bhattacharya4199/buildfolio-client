@@ -289,7 +289,7 @@ function UserForm() {
             }`}
           >
             <img src={ErrorIcon} alt="Error Icon" />
-            This field is required
+            This field is required / Phone Number must be in correct format
           </span>
         </div>
         <div className="userForm__form-summary">
