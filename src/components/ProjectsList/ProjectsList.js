@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Project from "../Projects/Projects";
+import { API_BASE_URL } from "../../utils/utils";
 
 function ProjectLists() {
   let { id } = useParams();
@@ -9,9 +10,10 @@ function ProjectLists() {
   const [hasProjectLoaded, setHasProjectLoaded] = useState(false);
   const [projects, setProjects] = useState("");
 
+  //Fetch Project Details for specific User
   const fetchProjectDetails = async () => {
     await axios
-      .get(`http://localhost:8080/users/${id}/projects`)
+      .get(`${API_BASE_URL}/users/${id}/projects`)
       .then((res) => {
         setProjects(res.data);
         setHasProjectLoaded(true);
@@ -21,10 +23,12 @@ function ProjectLists() {
       });
   };
 
+  //Use Effect to Fetch Call
   useEffect(() => {
     fetchProjectDetails();
   }, []);
 
+  //If Project data is loaded, the Project section is loaded
   if (!hasProjectLoaded) {
     return null;
   } else {

@@ -8,8 +8,7 @@
     font-family: "Roboto-Bold";
     font-weight: 700;
     font-size: 20px;
-    padding-top: $mobile-padding-before-headlines;
-    padding-bottom: $mobile-padding-after-headlines;
+    padding: $mobile-padding-before-headlines 0 $mobile-padding-after-headlines;
   }
 
   &__content {
@@ -69,8 +68,7 @@
     padding: $desktop-padding-between-components;
   
     &__mainTitle {
-      padding-top: $desktop-padding-before-headlines;
-      padding-bottom: $desktop-padding-after-headlines;
+      padding: $desktop-padding-before-headlines 0 $desktop-padding-after-headlines;
     }
   
     &__content {

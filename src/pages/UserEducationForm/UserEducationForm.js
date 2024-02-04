@@ -18,11 +18,13 @@ function UserEducationForm() {
 
   const navigate = useNavigate();
 
+  //Handle Cancel Button Function
   function handleCancel() {
     alert("Education is not added");
     navigate(`/${id}/user`);
   }
 
+  //Form Input Handle Functions
   const handleChangeSchoolName = (event) => {
     const schoolName = event.target.value;
     setSchoolName(schoolName);
@@ -38,6 +40,7 @@ function UserEducationForm() {
     setGradDate(gradDate);
   };
 
+  //Post Education Call
   const postEducation = async (schoolName, certName, gradDate) => {
     const newEducation = {
       user_id: id,
@@ -57,6 +60,7 @@ function UserEducationForm() {
     }
   };
 
+  //Form Validation
   const isFormValid = () => {
     let formComplete = true;
 
@@ -86,6 +90,7 @@ function UserEducationForm() {
     return formComplete;
   };
 
+  //Handle Submit Button Function
   const handleSubmit = async (event) => {
     event.preventDefault();
 

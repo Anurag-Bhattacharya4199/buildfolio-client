@@ -16,11 +16,13 @@ function UserReferenceForm() {
 
   const navigate = useNavigate();
 
+  //Handle Cancel Submit Function
   function handleCancel() {
     alert("Reference is not added");
     navigate(`/${id}/user`);
   }
 
+  //Handle Input Change Functions
   const handleChangeName = (event) => {
     const name = event.target.value;
     setName(name);
@@ -31,6 +33,7 @@ function UserReferenceForm() {
     setComment(comment);
   };
 
+  //Post Reference Function
   const postReference = async (name, comment) => {
     const newRef = {
       user_id: id,
@@ -49,6 +52,7 @@ function UserReferenceForm() {
     }
   };
 
+  //Form Validation
   const isFormValid = () => {
     let formComplete = true;
 
@@ -72,6 +76,7 @@ function UserReferenceForm() {
     return formComplete;
   };
 
+  //Handle Submit Button
   const handleSubmit = async (event) => {
     event.preventDefault();
 

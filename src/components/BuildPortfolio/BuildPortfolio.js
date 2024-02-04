@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./BuildPortfolio.scss";
+import { API_BASE_URL } from "../../utils/utils";
 
 function BuildPortfolio() {
   let { id } = useParams();
@@ -22,18 +23,23 @@ function BuildPortfolio() {
   const [refs, setRefs] = useState("");
   const [hasRefLoaded, setHasRefLoaded] = useState(false);
 
+  //Fetch Education Details for Specific User
   const fetchEducationDetails = async () => {
     await axios
-      .get(`http://localhost:8080/users/${id}/educations`)
+      .get(`${API_BASE_URL}/users/${id}/educations`)
       .then((res) => {
         setEducations(res.data);
         setHasEducationLoaded(true);
+      })
+      .catch(() => {
+        navigate("/error");
       });
   };
 
+  //Fetch Project Details for Specific User
   const fetchProjectDetails = async () => {
     await axios
-      .get(`http://localhost:8080/users/${id}/projects`)
+      .get(`${API_BASE_URL}/users/${id}/projects`)
       .then((res) => {
         setProjects(res.data);
         setHasProjectLoaded(true);
@@ -43,9 +49,10 @@ function BuildPortfolio() {
       });
   };
 
+  //Fetch Work Details for Specific User
   const fetchWorkDetails = async () => {
     await axios
-      .get(`http://localhost:8080/users/${id}/workExperiences`)
+      .get(`${API_BASE_URL}/users/${id}/workExperiences`)
       .then((res) => {
         setWorks(res.data);
         setHasWorkLoaded(true);
@@ -55,9 +62,10 @@ function BuildPortfolio() {
       });
   };
 
+  //Fetch Skill Details for Specific User
   const fetchSkillDetails = async () => {
     await axios
-      .get(`http://localhost:8080/users/${id}/skills`)
+      .get(`${API_BASE_URL}/users/${id}/skills`)
       .then((res) => {
         setSkills(res.data);
         setHasSkillLoaded(true);
@@ -67,9 +75,10 @@ function BuildPortfolio() {
       });
   };
 
+  //Fetch Reference Details for Specific User
   const fetchRefDetails = async () => {
     await axios
-      .get(`http://localhost:8080/users/${id}/references`)
+      .get(`${API_BASE_URL}/users/${id}/references`)
       .then((res) => {
         setRefs(res.data);
         setHasRefLoaded(true);
@@ -79,6 +88,7 @@ function BuildPortfolio() {
       });
   };
 
+  //Use Effect to call each Fetch Call
   useEffect(() => {
     fetchEducationDetails();
     fetchProjectDetails();
@@ -87,10 +97,12 @@ function BuildPortfolio() {
     fetchRefDetails();
   }, []);
 
+  //Go to Portfolio Home Page
   const goToPortfolio = () => {
     navigate(`/${id}/user/portfolio`);
   };
 
+  //If All Data and Data length is greater than 0 then Build Portfolio Button is displayed
   if (
     hasEducationLoaded &&
     educations.length > 0 &&

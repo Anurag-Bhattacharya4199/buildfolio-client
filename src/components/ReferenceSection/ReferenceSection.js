@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ReferenceItem from "../ReferenceItem/ReferenceItem";
 import "./ReferenceSection.scss";
+import { API_BASE_URL } from "../../utils/utils";
 
 function ReferenceSection() {
   let { id } = useParams();
@@ -11,9 +12,10 @@ function ReferenceSection() {
   const [refs, setRefs] = useState("");
   const [showRefs, setShowRefs] = useState(false);
 
+  //Fetch References for Specific User
   const fetchRefDetails = async () => {
     await axios
-      .get(`http://localhost:8080/users/${id}/references`)
+      .get(`${API_BASE_URL}/users/${id}/references`)
       .then((res) => {
         setRefs(res.data);
         setHasRefLoaded(true);
@@ -23,14 +25,17 @@ function ReferenceSection() {
       });
   };
 
+  //Use Effect to Fetch Call
   useEffect(() => {
     fetchRefDetails();
   }, []);
 
+  //Load Reference Section
   const loadRefs = () => {
     setShowRefs(true);
   };
 
+  //Hide Reference Section
   const hideRefs = () => {
     setShowRefs(false);
   };

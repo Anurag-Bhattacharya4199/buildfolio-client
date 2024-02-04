@@ -3,7 +3,7 @@
 .skillInfo {
   text-align: center;
   border: 1px solid $Black;
-  padding: 16px;
+  padding: 1rem;
 
   &__title {
     padding-bottom: $mobile-padding-between-components;
@@ -12,7 +12,7 @@
 
 @include tablet {
   .skillInfo {
-    padding: 32px;
+    padding: 2rem;
 
     &__title {
       padding-bottom: $desktop-padding-between-components;

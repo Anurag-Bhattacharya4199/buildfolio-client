@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./UserSummary.scss";
+import { API_BASE_URL } from "../../utils/utils";
 
 function UserSummary() {
   let { id } = useParams();
@@ -10,9 +11,10 @@ function UserSummary() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [summary, setSummary] = useState("");
 
+  //Fetch User Details for Specific User
   const fetchUserDetails = async () => {
     await axios
-      .get(`http://localhost:8080/users/${id}`)
+      .get(`${API_BASE_URL}/users/${id}`)
       .then((response) => {
         setSummary(response.data.user_summary);
         setHasLoaded(true);
@@ -22,10 +24,12 @@ function UserSummary() {
       });
   };
 
+  //Use Effect to Fetch Call
   useEffect(() => {
     fetchUserDetails();
   }, []);
 
+  //If User Data is loaded, user summary is displayed
   if (!hasLoaded) {
     return null;
   } else {

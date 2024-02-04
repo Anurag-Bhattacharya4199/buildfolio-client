@@ -15,6 +15,7 @@ import WorkSection from "../../components/WorkSection/WorkSection";
 import SkillSection from "../../components/SkillSection/SkillSection";
 import ReferenceSection from "../../components/ReferenceSection/ReferenceSection";
 import BuildPortfolio from "../../components/BuildPortfolio/BuildPortfolio";
+import { API_BASE_URL } from "../../utils/utils";
 
 function UserDashboard() {
   let { id } = useParams();
@@ -23,9 +24,10 @@ function UserDashboard() {
   const [hasLoaded, setHasLoaded] = useState(false);
   const [user, setUser] = useState("");
 
+  //Fetch User Details for Specific User
   const fetchUserDetails = async () => {
     await axios
-      .get(`http://localhost:8080/users/${id}`)
+      .get(`${API_BASE_URL}/users/${id}`)
       .then((response) => {
         setUser(response.data);
         setHasLoaded(true);
@@ -35,10 +37,12 @@ function UserDashboard() {
       });
   };
 
+  //User Effect to Fetch Call
   useEffect(() => {
     fetchUserDetails();
   }, []);
 
+  //If User Details loaded, User Dashboard Content displayed
   if (!hasLoaded) {
     return null;
   } else {

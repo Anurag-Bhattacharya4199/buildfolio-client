@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import ProjectItem from "../ProjectItem/ProjectItem";
 import "./ProjectSection.scss";
+import { API_BASE_URL } from "../../utils/utils";
 
 function ProjectSection() {
   let { id } = useParams();
@@ -11,9 +12,10 @@ function ProjectSection() {
   const [projects, setProjects] = useState("");
   const [showProjects, setShowProjects] = useState(false);
 
+  //Fetch Project Details for Specific User
   const fetchProjectDetails = async () => {
     await axios
-      .get(`http://localhost:8080/users/${id}/projects`)
+      .get(`${API_BASE_URL}/users/${id}/projects`)
       .then((res) => {
         setProjects(res.data);
         setHasProjectLoaded(true);
@@ -23,14 +25,17 @@ function ProjectSection() {
       });
   };
 
+  //Use Effect to call Fetch Call
   useEffect(() => {
     fetchProjectDetails();
   }, []);
 
+  //Load Projects Section
   const loadProjects = () => {
     setShowProjects(true);
   };
 
+  //Hide Projects Section
   const hideProjects = () => {
     setShowProjects(false);
   };
