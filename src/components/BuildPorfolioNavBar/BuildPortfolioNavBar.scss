@@ -1,0 +1,37 @@
+@import "../../styles/partials/global";
+
+.portfolioNavBar {
+  display: flex;
+  justify-content: space-between;
+  padding: $mobile-padding-before-headlines 1rem $mobile-padding-after-headlines;
+  gap: 1rem;
+
+  &__links {
+    color: $Black;
+    border-radius: 20px;
+    padding: 0px 16px;
+    font-family: "Roboto-Bold";
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .active-home, .active-about, .active-reviews{
+    background-color: $Black;
+    color: #fff;
+  }
+
+  &__links:hover {
+    background-color: $Black;
+    color: #fff;
+  }
+}
+
+@include tablet {
+  .portfolioNavBar{
+    padding-top: 0;
+
+    &__links {
+      font-size: 14px;
+    }
+  }
+}

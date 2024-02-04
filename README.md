@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+Steps to Run Full-Stack Application
+These are the Steps to Run the Client Application:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Pre-Requisite: Follow Steps to setup the Server Application, using the Instructions on https://github.com/Anurag-Bhattacharya4199/buildfolio-server
 
-## Available Scripts
+1) Now that the server is running, the client application can be run to see the front-end of the Full-Stack Web Application
+2) To install all packages, run npm i to create the node_modules folder for the installed packages
+3) To start the application, run npm start
+4) Now the application is running on your browser and can be interacted with to see all features
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Features include:
+1) Home Page: An overview of the Project
+2) User Form: Can be navigated to in two ways: 1) Through User Form Tab Link 2) "Let's Build Your User" Button on bottom of Home Page"
+In this form, User inputs Basic Information about themselves
+3) User Dashboard: Navigated to, once User Form is submitted with valid inputs
+Here User will be able to see All the Basic Information they have inputted when they first created their User
+User can now add Specific Details of their profile like Education, Project, Work, Skill, Reference
+As they add a Specific Detail, there is Buttons where they can see the Specific Detail they have added, for example, Show Education, displays all the Education Details the User has added
+Once User has added all the necessary information of all specific details, Build Portfolio Button will be displayed
+4) Portfolio Home Page: This is Navigated to once User clicks on Build Portfolio button / Home Sub Navigation Tab (which is the User's Name)
+Also, A Sub Navigation Bar will appear which is the Navigation Bar for the User Portfolio Web Page (Future Plans to make it more user accessible)
+In this page, User will see a generic profile pic (Future Plans to allow User to upload a Profile Pic), their Summary and List of Projects with Generic Project Images (Future Plans to allow User to upload project screenshots when adding a project), Contact Info and Professional Socials
+User will also have a User Dashboard Button to go back to their User Dashboard to add any new specific details
+5) Portfolio About Page: This is Navigated to through About Sub Navigation Tab
+In this page, Users will see their Education, Work, Skill List
+Again, User Dashboard Button present to go back to their User Dashboard to add any new specific details
+6) Portfolio Reviews Page: This is Navigated to through Reviews Sub Navigation Tab
+In this page, Users will see their Reviews List
+Again, User Dashboard Button present to go back to their User Dashboard to add any new specific details

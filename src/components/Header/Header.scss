@@ -1,0 +1,21 @@
+@import "../../styles/partials/global";
+
+.header {
+  &__link {
+    text-decoration: none;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    padding: $mobile-padding-before-headlines 0 $mobile-padding-after-headlines;
+  }
+}
+
+@include tablet {
+  .header {
+    &__content {
+      padding: $desktop-padding-before-headlines 0 $desktop-padding-after-headlines;
+    }
+  }
+}

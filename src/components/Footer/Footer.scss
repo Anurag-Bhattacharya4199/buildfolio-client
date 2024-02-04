@@ -1,0 +1,23 @@
+@import "../../styles/partials/global";
+
+.footer {
+  padding: $mobile-padding-between-components;
+  display: flex;
+  justify-content: center;
+
+  &__icons {
+    padding-top: $mobile-padding-between-components;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@include tablet {
+  .footer {
+    padding: $desktop-padding-between-components;
+
+    &__icons {
+      padding-top: $desktop-padding-between-components;
+    }
+  }
+}

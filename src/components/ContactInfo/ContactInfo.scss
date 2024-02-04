@@ -1,0 +1,15 @@
+@import "../../styles/partials/global";
+
+.contactInfo {
+  &__title {
+    padding-bottom: $mobile-padding-between-components;
+  }
+}
+
+@include tablet {
+  .contactInfo {
+    &__title {
+      padding-bottom: $desktop-padding-between-components;
+    }
+  }
+}

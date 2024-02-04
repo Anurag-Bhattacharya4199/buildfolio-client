@@ -1,0 +1,52 @@
+@import "../../styles/partials/global";
+
+.mainContent {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: $mobile-padding-between-components;
+
+  &__heroImage {
+    width: 100%;
+    height: auto;
+    padding-bottom: $mobile-padding-between-components;
+  }
+
+  p {
+    text-align: center;
+    padding-bottom: $mobile-padding-between-components;
+  }
+
+  &__buttonSection {
+    text-align: center;
+  }
+
+  &__button{
+    font-size: 16px;
+    padding: 16px;
+    border-radius: 40%;
+    
+    &:hover {
+      cursor: pointer;
+      background-color: $Yellow;
+    }
+  }
+}
+
+@include tablet {
+  .mainContent {
+    padding-bottom: $desktop-padding-between-components;
+
+    &__heroImage {
+      padding-bottom: $desktop-padding-between-components;
+    }
+
+    p {
+      font-size: 20px;
+      padding-bottom: $desktop-padding-between-components;
+    }
+
+    &__button {
+      font-size: 20px;  
+    }
+  }
+}

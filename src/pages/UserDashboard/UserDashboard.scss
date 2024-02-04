@@ -1,0 +1,87 @@
+@import "../../styles/partials/global";
+
+.userDashboard {
+  text-align: center;
+  padding: $mobile-padding-between-components;
+
+  &__mainTitle {
+    font-family: "Roboto-Bold";
+    font-weight: 700;
+    font-size: 20px;
+    padding: $mobile-padding-before-headlines 0 $mobile-padding-after-headlines;
+  }
+
+  &__content {
+    border: 1px solid $Black;
+    margin: $mobile-padding-between-components;
+  }
+
+  &__contacts, &__summary, &__socialAccounts {
+    margin: $mobile-padding-between-components;
+    padding: $mobile-padding-between-components;
+    border: 1px solid $Black;
+  }
+
+  &__buttons {
+    padding: $mobile-padding-between-components;
+    display: flex;
+    justify-content: space-evenly;
+
+    &-links {
+      &:hover {
+        background-color: lightgray;
+      }
+    }
+  }
+}
+
+.Red {
+  color: $Red;
+}
+
+.Orange {
+  color: $Orange;
+}
+
+.Yellow {
+  color: $Yellow;
+}
+
+.Green {
+  color: $Green;
+}
+
+.Blue {
+  color: $Blue;
+}
+
+.Indigo {
+  color: $Indigo;
+}
+
+.Violet {
+  color: $Violet;
+}
+
+@include tablet {
+  .userDashboard {
+    padding: $desktop-padding-between-components;
+  
+    &__mainTitle {
+      padding: $desktop-padding-before-headlines 0 $desktop-padding-after-headlines;
+    }
+  
+    &__content {
+      margin: $desktop-padding-between-components;
+    }
+  
+    &__contacts, &__summary, &__socialAccounts {
+      margin: $desktop-padding-between-components;
+      padding: $desktop-padding-between-components;
+    }
+
+    &__buttons {
+      padding: $desktop-padding-between-components;
+    }
+  }
+}

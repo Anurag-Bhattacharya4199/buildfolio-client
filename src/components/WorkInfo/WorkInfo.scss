@@ -1,0 +1,23 @@
+@import "../../styles/partials/global";
+
+.workInfo {
+  text-align: center;
+  border: 1px solid $Black;
+  padding: 1rem;
+  margin-bottom: $mobile-padding-between-components;
+
+  &__title {
+    padding-bottom: $mobile-padding-between-components;
+  }
+}
+
+@include tablet {
+  .workInfo {
+    padding: 2rem;
+    margin-bottom: $desktop-padding-between-components;
+
+    &__title {
+      padding-bottom: $desktop-padding-between-components;
+    }
+  }
+}

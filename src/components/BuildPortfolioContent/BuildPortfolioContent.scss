@@ -1,0 +1,40 @@
+@import "../../styles/partials/global";
+
+.buildPortfolioContent {
+  padding: $mobile-padding-between-components;
+
+  &__image {
+    width: 100%;
+    height: 250px;
+  }
+
+  &__summary {
+    display: flex;
+    justify-content: center;
+    padding-top: $mobile-padding-between-components;
+  }
+
+  &__contactInfo {
+    display: flex;
+    justify-content: space-between;
+    padding-top: $mobile-padding-between-components;
+  }
+}
+
+@include tablet {
+  .buildPortfolioContent {
+    padding: $desktop-padding-between-components;
+
+    &__image {
+      height: 550px;
+    }
+
+    &__summary {
+      padding-top: $desktop-padding-between-components;
+    }
+
+    &__contactInfo {
+      padding-top: $desktop-padding-between-components;
+    }
+  }
+}
