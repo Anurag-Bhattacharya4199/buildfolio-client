@@ -1,13 +1,3 @@
-Steps to Run Full-Stack Application
-These are the Steps to Run the Client Application:
-
-Pre-Requisite: Follow the Steps to setup the Server Application, using the Instructions on https://github.com/Anurag-Bhattacharya4199/buildfolio-server
-
-1) Now that the server is running, the client application can be run to see the front end of the Full-Stack Web Application
-2) To install all packages, run npm i to create the node_modules folder for the installed packages
-3) To start the application, run npm start
-4) Now the application is running on your browser and can be interacted with to see all features
-
 Features include:
 1) Home Page: An overview of the Project
 2) User Form: Can be navigated to in two ways: 1) Through User Form Tab Link 2) "Let's Build Your User" Button on bottom of Home Page"
@@ -83,6 +73,16 @@ Future Implementation Work:
 - Data Security & Encryption
 - User Authorization & Authentication
 - Allow Users to Upload Images for Profile Pictures & Project Screenshots
+
+Steps to Run Full-Stack Application
+These are the Steps to Run the Client Application:
+
+Pre-Requisite: Follow the Steps to setup the Server Application, using the Instructions on https://github.com/Anurag-Bhattacharya4199/buildfolio-server
+
+1) Now that the server is running, the client application can be run to see the front end of the Full-Stack Web Application
+2) To install all packages, run npm i to create the node_modules folder for the installed packages
+3) To start the application, run npm start
+4) Now the application is running on your browser and can be interacted with to see all features
 
 
 
