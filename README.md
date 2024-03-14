@@ -1,29 +1,92 @@
-Steps to Run Full-Stack Application
-These are the Steps to Run the Client Application:
+## My BuildPortfolio Web Application:
 
-Pre-Requisite: Follow Steps to setup the Server Application, using the Instructions on https://github.com/Anurag-Bhattacharya4199/buildfolio-server
+In the Buildfolio Web Application, a student, new graduate or new professional can automate the creation of their Portfolio Website through a series of forms. Users will input basic information about themselves and then will add specific details from a dashboard like education history, work history, projects, skills and references. Using all this information, a template Portfolio Web Page with multiple informative tabs will be available for users to view and share.
 
-1) Now that the server is running, the client application can be run to see the front-end of the Full-Stack Web Application
-2) To install all packages, run npm i to create the node_modules folder for the installed packages
-3) To start the application, run npm start
-4) Now the application is running on your browser and can be interacted with to see all features
+## App Walkthrough:
 
-Features include:
-1) Home Page: An overview of the Project
-2) User Form: Can be navigated to in two ways: 1) Through User Form Tab Link 2) "Let's Build Your User" Button on bottom of Home Page"
-In this form, User inputs Basic Information about themselves
-3) User Dashboard: Navigated to, once User Form is submitted with valid inputs
-Here User will be able to see All the Basic Information they have inputted when they first created their User
-User can now add Specific Details of their profile like Education, Project, Work, Skill, Reference
-As they add a Specific Detail, there is Buttons where they can see the Specific Detail they have added, for example, Show Education, displays all the Education Details the User has added
-Once User has added all the necessary information of all specific details, Build Portfolio Button will be displayed
-4) Portfolio Home Page: This is Navigated to once User clicks on Build Portfolio button / Home Sub Navigation Tab (which is the User's Name)
-Also, A Sub Navigation Bar will appear which is the Navigation Bar for the User Portfolio Web Page (Future Plans to make it more user accessible)
-In this page, User will see a generic profile pic (Future Plans to allow User to upload a Profile Pic), their Summary and List of Projects with Generic Project Images (Future Plans to allow User to upload project screenshots when adding a project), Contact Info and Professional Socials
-User will also have a User Dashboard Button to go back to their User Dashboard to add any new specific details
-5) Portfolio About Page: This is Navigated to through About Sub Navigation Tab
-In this page, Users will see their Education, Work, Skill List
-Again, User Dashboard Button present to go back to their User Dashboard to add any new specific details
-6) Portfolio Reviews Page: This is Navigated to through Reviews Sub Navigation Tab
-In this page, Users will see their Reviews List
-Again, User Dashboard Button present to go back to their User Dashboard to add any new specific details
+https://github.com/Anurag-Bhattacharya4199/buildfolio-client/assets/134398219/c0816af9-220d-4c17-bb32-abdfa2b7e23f
+
+## Features:
+
+- **Home Page:** This Home Page features a brief description of the overall project and a CTA button to allow the User to start the portfolio-building process by creating a User.
+- **User Form:** Here, the User inputs basic information about themselves from the name, email address, phone number, profile summary, LinkedIn & GitHub Links and their Primary & Secondary colours
+- **User Dashboard"** Here, the User can see all the basic information about themselves + CTA Images to add specific information about themselves such as education history, notable projects, work experiences, skill set & list of references. Upon receiving all the information needed, the CTA Button allows the User to build their Portfolio Web Page.
+- **Specific Information Forms:** In these individual-specific information forms, User input their education history, notable projects, work experiences, skill set & list of reference information.
+- **PORTFOLIO Home Page:** This page features a Hero Image of the User, The Profile Summary, a List of Notable Projects, Contact Information & Professional Social Accounts (LinkedIn and GitHub).
+- **PORTFOLIO About Page:** This page features the Education, Work & Skill Set information along with a Profile Summary. There is also a CTA Button to go back to the User Dashboard to add any new information.
+- **PORTFOLIO Reviews Page:** This page features a List of Reviews from the reference information inputted by the User.
+
+## Technologies & Packages
+Main Ones:
+- **React & React DOM** (`react`, `react-dom`): A JS library for building UI. This project uses React for its component-based architecture.
+- **React Router DOM** (`react-router-dom`): Used for handling routing in a single-page application (SPA), enabling navigation between different sections of the app without reloading the application
+- **Sass** (`sass`): A preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS), allowing for more advanced styling options.
+- **Axios** (`axios`): A promise-based HTTP client for making requests to back-end services.
+- **Validator** (`validator`): A library used for string validations. Here, used for the validation of email address input.
+
+To install these dependencies, ensure you have Node.js and npm installed, then run `npm install` in the project directory after cloning the repository.
+
+These packages facilitate the development of a modern, efficient, and user-friendly client-side application by providing essential utilities, components, and development tools.
+
+## Setup:
+
+To run the project application, follow these steps:
+
+Pre-requisite:
+Follow the Server Application instructions to set up the server and database needed for the application: https://github.com/Anurag-Bhattacharya4199/buildfolio-server
+
+STEP 1: Clone the Repository
+```bash
+git clone https://github.com/Anurag-Bhattacharya4199/buildfolio-client
+```
+
+STEP 2: Navigate to the Project Directory
+```
+cd buildfolio-client
+```
+
+STEP 3: Install dependencies
+```
+npm install
+```
+or
+```
+npm i
+```
+
+STEP 4: Start the Application
+```
+npm start
+```
+
+The application should now be running on http://localhost:3000.
+
+## Usage
+- **Build a User:** User can create their user profile, by inputting basic information about themselves
+- **Add Specific Details:** Users can add specific information about themselves like education history, notable projects, work experience, skills set & list of references
+- **Explore Portfolio Web Page:** User can explore the Portfolio Web Page from the Home Page to the About Page to the Reviews Page
+
+## Future Implementation Work:
+Planned future implementation for the next phases of work:
+
+### Enhanced Styling
+Improve the overall styling of the application for a more user-friendly and production-ready web application
+
+### Data Security & Encryption
+As the information provided by the user is personal, plans to secure the data the user inputs and encrypt the data when passing the information to the back-end & database
+
+### User Authorization & Authentication
+Allow Users to sign-up and log in with a User Profile, to view and edit their Portfolio Web Page information
+
+### Profile Picture + Project Images
+Allow Users to upload Images for Profile Picture and Project Images for each notable project
+
+
+
+
+
+
+
+
+
+
