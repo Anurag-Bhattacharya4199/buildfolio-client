@@ -3,12 +3,12 @@
 .mainContent {
   padding-left: 16px;
   padding-right: 16px;
-  padding-bottom: $mobile-padding-between-components;
-
+  
   &__heroImage {
     width: 100%;
     height: auto;
     padding-bottom: $mobile-padding-between-components;
+    padding-top: $mobile-padding-between-components;
   }
 
   p {
@@ -16,7 +16,15 @@
     padding-bottom: $mobile-padding-between-components;
   }
 
+  hr {
+    height: 2px;
+    background-color: black;
+    border-color: black;
+  }
+
   &__buttonSection {
+    padding-top: $mobile-padding-between-components;
+    padding-bottom: $mobile-padding-between-components;
     text-align: center;
   }
 
@@ -34,10 +42,9 @@
 
 @include tablet {
   .mainContent {
-    padding-bottom: $desktop-padding-between-components;
-
     &__heroImage {
       padding-bottom: $desktop-padding-between-components;
+      padding-top: $desktop-padding-between-components;
     }
 
     p {
