@@ -5,11 +5,18 @@ function EducationItem(props) {
 
   return (
     <section className="educationContent">
-      <p className="educationContent__content">
-        {schoolName} <span className="educationContent__dots" /> {certName}
-        <span className="educationContent__dots" />
-        {gradDate}
-      </p>
+      <table>
+        <tr>
+          <th>School Name:</th>
+          <th>Certification Name:</th>
+          <th>Graduation Date:</th>
+        </tr>
+        <tr>
+          <td>{schoolName}</td>
+          <td>{certName}</td>
+          <td>{gradDate}</td>
+        </tr>
+      </table>
     </section>
   );
 }

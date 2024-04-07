@@ -2,31 +2,10 @@
 
 .workContent {
   padding-bottom: $mobile-padding-between-components;
-
-  &__dots {
-    height: 10px;
-    width: 10px;
-    background-color: $Black;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 0 $mobile-padding-between-components;
-  }
-
-  &__desc {
-    padding-top: $mobile-padding-between-components;
-  }
 }
 
 @include tablet {
   .workContent {
     padding-bottom: $desktop-padding-between-components;
-
-    &__dots {
-      margin: 0 $desktop-padding-between-components;
-    }
-
-    &__desc {
-      padding-top: $desktop-padding-between-components;
-    }
   }
 }

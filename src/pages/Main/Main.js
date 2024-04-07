@@ -26,11 +26,13 @@ function Main() {
           with multiple tabs will be created for user viewing and sharing
         </p>
       </div>
+      <hr />
       <div className="mainContent__buttonSection">
         <button onClick={handleSubmit} className="mainContent__button">
           Let's Build your User!
         </button>
       </div>
+      <hr />
     </section>
   );
 }

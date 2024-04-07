@@ -58,35 +58,35 @@ function UserDashboard() {
             to={`/${id}/addEducation`}
             className="userDashboard__buttons-links"
           >
-            <h3>Add Education:</h3>
+            <h3 className={`${user.user_secondaryColor}`}>Add Education:</h3>
             <img src={Education} alt="Education-icon" />
           </NavLink>
           <NavLink
             to={`/${id}/addProject`}
             className="userDashboard__buttons-links"
           >
-            <h3>Add Project:</h3>
+            <h3 className={`${user.user_secondaryColor}`}>Add Project:</h3>
             <img src={Project} alt="Project-icon" />
           </NavLink>
           <NavLink
             to={`/${id}/addWork`}
             className="userDashboard__buttons-links"
           >
-            <h3>Add Work:</h3>
+            <h3 className={`${user.user_secondaryColor}`}>Add Work:</h3>
             <img src={Work} alt="Work-icon" />
           </NavLink>
           <NavLink
             to={`/${id}/addSkill`}
             className="userDashboard__buttons-links"
           >
-            <h3>Add Skill:</h3>
+            <h3 className={`${user.user_secondaryColor}`}>Add Skill:</h3>
             <img src={Skill} alt="Skill-icon" />
           </NavLink>
           <NavLink
             to={`/${id}/addReference`}
             className="userDashboard__buttons-links"
           >
-            <h3>Add Reference:</h3>
+            <h3 className={`${user.user_secondaryColor}`}>Add Reference:</h3>
             <img src={Reference} alt="Reference-icon" />
           </NavLink>
         </div>
