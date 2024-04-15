@@ -24,6 +24,7 @@
 
   &__list {
     padding-top: $mobile-padding-between-components;
+    padding-bottom: $mobile-padding-between-components;
   }
 }
 
@@ -35,6 +36,7 @@
 
     &__list {
       padding-top: $desktop-padding-between-components;
+      padding-bottom: $desktop-padding-between-components;
     }
   }
 }
